@@ -1,5 +1,5 @@
-import Navbar from '../components/home/Navbar';
-import HeroSection from '../components/home/HeroSection';
+import Navbar from '../components/home/Navbar.jsx';
+import HeroSection from '../components/home/HeroSection.jsx';
 // import CompaniesWorkedWith from '../components/home/CompaniesWorkedWith';
 // import AboutKaizen from '../components/home/AboutKaizen';
 // import Turnover from '../components/home/Turnover';
