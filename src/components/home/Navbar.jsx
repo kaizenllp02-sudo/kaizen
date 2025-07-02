@@ -17,7 +17,7 @@ export default function Navbar() {
 
           {/* Hamburger Icon */}
           <div className="kaizen-hamburger" onClick={toggleMenu}>
-            <i className="fa-solid fa-bars"></i>
+            <i className={`fa-solid ${isMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
           </div>
 
           {/* Desktop Menu */}

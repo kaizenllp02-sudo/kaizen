@@ -1,5 +1,5 @@
 import Navbar from '../components/home/Navbar';
-// import HeroSection from '../components/home/HeroSection';
+import HeroSection from '../components/home/HeroSection';
 // import CompaniesWorkedWith from '../components/home/CompaniesWorkedWith';
 // import AboutKaizen from '../components/home/AboutKaizen';
 // import Turnover from '../components/home/Turnover';
@@ -15,17 +15,17 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      {/* <HeroSection />
-      <CompaniesWorkedWith />
-      <AboutKaizen />
-      <Turnover />
-      <ServicesOffered />
-      <CTACard />
-      <PastWorks />
-      <Testimonials />
-      <BlogPreview />
-      <ContactForm />
-      <Footer /> */}
+      <HeroSection />
+      {/* <CompaniesWorkedWith /> */}
+      {/* <AboutKaizen /> */}
+      {/* <Turnover /> */}
+      {/* <ServicesOffered /> */}
+      {/* <CTACard /> */}
+      {/* <PastWorks /> */}
+      {/* <Testimonials /> */}
+      {/* <BlogPreview /> */}
+      {/* <ContactForm /> */}
+      {/* <Footer /> */}
     </>
   );
 }

@@ -2,6 +2,9 @@
 
 /* ===== Desktop Navbar ===== */
 .kaizen-navbar {
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
     padding: 20px 10px;
     width: 60%;
     background-color: black;
