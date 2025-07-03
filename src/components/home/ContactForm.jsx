@@ -77,7 +77,7 @@ export default function ContactForm() {
 
   const handleContactSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -112,7 +112,7 @@ export default function ContactForm() {
 
   const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -143,25 +143,25 @@ export default function ContactForm() {
   return (
     <section className="kaizen-contact-section">
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <h2 style={{ 
-          fontSize: '36px', 
-          fontWeight: '700', 
-          color: '#f2f2f2', 
-          margin: '0 0 10px 0' 
+        <h2 style={{
+          fontSize: '36px',
+          fontWeight: '700',
+          color: '#f2f2f2',
+          margin: '0 0 10px 0'
         }}>
           Get in Touch
         </h2>
-        <p style={{ 
-          fontSize: '18px', 
-          color: '#ccc', 
-          margin: '0' 
+        <p style={{
+          fontSize: '18px',
+          color: '#ccc',
+          margin: '0'
         }}>
           Ready to elevate your brand? Let's create something amazing together.
         </p>
       </div>
       <div className="contact-container">
         {/* Main Contact Form */}
-        <form 
+        <form
           onSubmit={handleContactSubmit}
           style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: 1, minWidth: '280px', margin: '0 auto', maxWidth: '600px' }}
         >
@@ -178,65 +178,65 @@ export default function ContactForm() {
               {contactMessage}
             </div>
           )}
-          
+
           <div style={{ display: 'flex', gap: '1rem' }}>
-            <TextField 
+            <TextField
               name="firstName"
-              label="First Name" 
-              type="text" 
-              required 
-              fullWidth 
+              label="First Name"
+              type="text"
+              required
+              fullWidth
               size="small"
               value={contactFormData.firstName}
               onChange={handleContactChange}
               sx={textFieldStyle}
             />
-            <TextField 
+            <TextField
               name="lastName"
-              label="Last Name" 
-              type="text" 
-              required 
-              fullWidth 
+              label="Last Name"
+              type="text"
+              required
+              fullWidth
               size="small"
               value={contactFormData.lastName}
               onChange={handleContactChange}
               sx={textFieldStyle}
             />
           </div>
-          <TextField 
+          <TextField
             name="email"
-            label="Email" 
-            type="email" 
-            required 
-            fullWidth 
+            label="Email"
+            type="email"
+            required
+            fullWidth
             size="small"
             value={contactFormData.email}
             onChange={handleContactChange}
             sx={textFieldStyle}
           />
-          <TextField 
+          <TextField
             name="phone"
-            label="Phone" 
-            type="tel" 
-            fullWidth 
+            label="Phone"
+            type="tel"
+            fullWidth
             size="small"
             value={contactFormData.phone}
             onChange={handleContactChange}
             sx={textFieldStyle}
           />
-          <TextField 
+          <TextField
             name="message"
-            label="Your Message" 
-            multiline 
-            rows={4} 
-            required 
+            label="Your Message"
+            multiline
+            rows={4}
+            required
             fullWidth
             value={contactFormData.message}
             onChange={handleContactChange}
             sx={textFieldStyle}
           />
-          <Button 
-            type="submit" 
+          <Button
+            type="submit"
             variant="contained"
             sx={buttonStyle}
           >
