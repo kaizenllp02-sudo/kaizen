@@ -31,7 +31,7 @@ const BlogSection = () => {
   }, [])
 
   const filteredPosts = posts.filter(post => {
-    const matchesCategory = selectedCategory === 'all' || 
+    const matchesCategory = selectedCategory === 'all' ||
       post.categories?.some(cat => cat._id === selectedCategory)
     const matchesSearch = post.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt?.toLowerCase().includes(searchTerm.toLowerCase())
@@ -59,8 +59,8 @@ const BlogSection = () => {
       </div>
 
       <div className="blog-container">
-        {/* Blog Filters */}
-        <div className="blog-filters">
+        <div className="blog-filters-layout">
+          {/* Blog Search */}
           <div className="blog-search">
             <i className="fas fa-search"></i>
             <input
@@ -71,12 +71,14 @@ const BlogSection = () => {
             />
           </div>
 
+          {/* Blog Categories */}
           <div className="blog-categories">
             <button
               className={selectedCategory === 'all' ? 'active' : ''}
               onClick={() => setSelectedCategory('all')}
             >
-              All Posts
+              <i className="fas fa-th-large"></i>
+              Explore All
             </button>
             {categories.map(category => (
               <button
@@ -94,9 +96,9 @@ const BlogSection = () => {
         <div className="blog-grid">
           {filteredPosts.length === 0 ? (
             <div className="blog-no-posts">
-              <i className="fas fa-file-alt"></i>
+              <i className="fas fa-inbox"></i>
               <h3>No posts found</h3>
-              <p>Try adjusting your search or category filter.</p>
+              <p>Try adjusting your search input.</p>
             </div>
           ) : (
             filteredPosts.map(post => (
@@ -110,7 +112,7 @@ const BlogSection = () => {
                     />
                   </div>
                 )}
-                
+
                 <div className="blog-card-content">
                   <div className="blog-card-meta">
                     {post.publishedAt && (
@@ -128,17 +130,17 @@ const BlogSection = () => {
                       </span>
                     )}
                   </div>
-                  
+
                   <h2 className="blog-card-title">
                     <Link to={`/blog/${post.slug.current}`}>
                       {post.title}
                     </Link>
                   </h2>
-                  
+
                   {post.excerpt && (
                     <p className="blog-card-excerpt">{post.excerpt}</p>
                   )}
-                  
+
                   <div className="blog-card-footer">
                     {post.author && (
                       <div className="blog-card-author">
@@ -151,8 +153,8 @@ const BlogSection = () => {
                         <span>{post.author.name}</span>
                       </div>
                     )}
-                    
-                    <Link 
+
+                    <Link
                       to={`/blog/${post.slug.current}`}
                       className="blog-card-read-more"
                     >
