@@ -9,7 +9,7 @@ import AboutKaizen from '../components/home/AboutKaizen';
 // import Testimonials from '../components/home/Testimonials';
 // import BlogPreview from '../components/home/BlogPreview';
 import ContactForm from '../components/home/ContactForm';
-// import Footer from '../components/home/Footer';
+import Footer from '../components/home/Footer';
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
       {/* <Testimonials /> */}
       {/* <BlogPreview /> */}
       <ContactForm />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
