@@ -1,0 +1,127 @@
+.about-kaizen {
+    --borderWidth: 2px;
+    padding: 30px 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+    background-color: black;
+    color: #f2f2f2;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+}
+
+.about-kaizen::after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg,
+        #f79533, #f37055, #ef4e7b,
+        #a166ab, #5073b8, #1098ad,
+        #07b39b, #6fba82);
+    border-radius: 20px;
+    z-index: -1;
+    animation: animatedgradient 4s ease infinite alternate;
+    background-size: 300% 300%;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-heading {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.about-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 40px;
+    padding: 0 10px;
+}
+
+.about-cta {
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: white;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.about-cta:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .about-kaizen {
+        padding: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .about-heading {
+        font-size: 28px;
+    }
+
+    .about-description {
+        font-size: 16px;
+    }
+
+    .about-cta {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+}
+
+.about-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+}
+
+.keyword-tag {
+    padding: 8px 16px;
+    border: 2px solid;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #f2f2f2;
+    cursor: default;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.keyword-tag:hover {
+    background-color: var(--hover-bg);
+    color: black;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

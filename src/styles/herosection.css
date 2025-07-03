@@ -43,11 +43,13 @@
   background-color: rgba(223, 160, 6, 0.9);
   color: #000;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-cta:hover {
   background-color: rgba(223, 160, 6, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(223, 160, 6, 0.5);
 }
 
 /* Scroll Down Arrow */
@@ -154,6 +156,32 @@
   font-size: 20px;
   font-weight: 600;
   color: #ccc;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.clients-title::before,
+.clients-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ccc, transparent);
+  margin: 0 20px;
+}
+
+/* Remove horizontal lines on smaller screens */
+@media (max-width: 600px) {
+  .clients-title {
+    display: block;
+  }
+  
+  .clients-title::before,
+  .clients-title::after {
+    display: none;
+  }
 }
 
 .logo-carousel:hover .logo-track {

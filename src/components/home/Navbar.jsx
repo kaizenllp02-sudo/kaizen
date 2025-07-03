@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles/Navbar.css';
+import '../../styles/navbar.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function Navbar() {

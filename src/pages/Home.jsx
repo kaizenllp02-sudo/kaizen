@@ -1,8 +1,8 @@
 import Navbar from '../components/home/Navbar.jsx';
 import HeroSection from '../components/home/HeroSection.jsx';
 // import CompaniesWorkedWith from '../components/home/CompaniesWorkedWith';
-// import AboutKaizen from '../components/home/AboutKaizen';
-// import Turnover from '../components/home/Turnover';
+import AboutKaizen from '../components/home/AboutKaizen';
+import Turnover from '../components/home/Turnover';
 // import ServicesOffered from '../components/home/ServicesOffered';
 // import CTACard from '../components/home/CTACard';
 // import PastWorks from '../components/home/PastWorks';
@@ -17,8 +17,8 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       {/* <CompaniesWorkedWith /> */}
-      {/* <AboutKaizen /> */}
-      {/* <Turnover /> */}
+      <AboutKaizen />
+      <Turnover />
       {/* <ServicesOffered /> */}
       {/* <CTACard /> */}
       {/* <PastWorks /> */}
