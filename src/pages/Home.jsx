@@ -10,6 +10,7 @@ import AboutKaizen from '../components/home/AboutKaizen';
 // import BlogPreview from '../components/home/BlogPreview';
 import ContactForm from '../components/home/ContactForm';
 import FAQ from '../components/home/FAQ.jsx';
+import FooterMenu from '../components/home/FooterMenu.jsx';
 import Footer from '../components/home/Footer';
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
       {/* <BlogPreview /> */}
       <ContactForm />
       <FAQ />
+      <FooterMenu />
       <Footer />
     </>
   );

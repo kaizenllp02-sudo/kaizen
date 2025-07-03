@@ -115,6 +115,7 @@
 @media (max-width: 768px) {
     .kaizen-navbar {
         width: 100%;
+        top: 0px;
         margin: 0;
         padding: 20px;
         border-radius: 0;
