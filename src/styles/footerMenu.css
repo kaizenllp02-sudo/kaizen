@@ -441,6 +441,7 @@
     .footer-menu-nav-header {
         cursor: pointer;
         padding: 25px 0;
+        /* padding-bottom: 25px; */
         margin-bottom: 0;
         display: flex;
         align-items: center;
@@ -448,6 +449,14 @@
         user-select: none;
         position: relative;
         transition: all 0.3s ease;
+    }
+
+    .footer-menu-contact-section{
+        margin-top: 20px;
+    }
+
+    .footer-menu-nav-column h4 {
+        margin-bottom: 0px;
     }
 
     .footer-menu-nav-header:hover {
