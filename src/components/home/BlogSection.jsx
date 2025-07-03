@@ -1,0 +1,173 @@
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { client, POSTS_QUERY, CATEGORIES_QUERY, urlFor } from '../../lib/sanity'
+import '../../styles/blog.css'
+
+const BlogSection = () => {
+  const [posts, setPosts] = useState([])
+  const [categories, setCategories] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [loading, setLoading] = useState(true)
+  const [searchTerm, setSearchTerm] = useState('')
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true)
+        const [postsData, categoriesData] = await Promise.all([
+          client.fetch(POSTS_QUERY),
+          client.fetch(CATEGORIES_QUERY)
+        ])
+        setPosts(postsData)
+        setCategories(categoriesData)
+      } catch (error) {
+        console.error('Error fetching blog data:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchData()
+  }, [])
+
+  const filteredPosts = posts.filter(post => {
+    const matchesCategory = selectedCategory === 'all' || 
+      post.categories?.some(cat => cat._id === selectedCategory)
+    const matchesSearch = post.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt?.toLowerCase().includes(searchTerm.toLowerCase())
+    return matchesCategory && matchesSearch
+  })
+
+  if (loading) {
+    return (
+      <section className="blog-section">
+        <div className="blog-loading">
+          <div className="blog-spinner"></div>
+          <p>Loading blog posts...</p>
+        </div>
+      </section>
+    )
+  }
+
+  return (
+    <section className="blog-section">
+      <div className="blog-hero">
+        <div className="blog-hero-content">
+          <h1>Our Blog</h1>
+          <p>Insights, tips, and stories from our journey</p>
+        </div>
+      </div>
+
+      <div className="blog-container">
+        {/* Blog Filters */}
+        <div className="blog-filters">
+          <div className="blog-search">
+            <i className="fas fa-search"></i>
+            <input
+              type="text"
+              placeholder="Search articles..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+
+          <div className="blog-categories">
+            <button
+              className={selectedCategory === 'all' ? 'active' : ''}
+              onClick={() => setSelectedCategory('all')}
+            >
+              All Posts
+            </button>
+            {categories.map(category => (
+              <button
+                key={category._id}
+                className={selectedCategory === category._id ? 'active' : ''}
+                onClick={() => setSelectedCategory(category._id)}
+              >
+                {category.title}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Blog Posts Grid */}
+        <div className="blog-grid">
+          {filteredPosts.length === 0 ? (
+            <div className="blog-no-posts">
+              <i className="fas fa-file-alt"></i>
+              <h3>No posts found</h3>
+              <p>Try adjusting your search or category filter.</p>
+            </div>
+          ) : (
+            filteredPosts.map(post => (
+              <article key={post._id} className="blog-card">
+                {post.mainImage && (
+                  <div className="blog-card-image">
+                    <img
+                      src={urlFor(post.mainImage).width(600).height(300).url()}
+                      alt={post.title}
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                
+                <div className="blog-card-content">
+                  <div className="blog-card-meta">
+                    {post.publishedAt && (
+                      <time dateTime={post.publishedAt}>
+                        {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </time>
+                    )}
+                    {post.categories && post.categories.length > 0 && (
+                      <span className="blog-card-category">
+                        {post.categories[0].title}
+                      </span>
+                    )}
+                  </div>
+                  
+                  <h2 className="blog-card-title">
+                    <Link to={`/blog/${post.slug.current}`}>
+                      {post.title}
+                    </Link>
+                  </h2>
+                  
+                  {post.excerpt && (
+                    <p className="blog-card-excerpt">{post.excerpt}</p>
+                  )}
+                  
+                  <div className="blog-card-footer">
+                    {post.author && (
+                      <div className="blog-card-author">
+                        {post.author.image && (
+                          <img
+                            src={urlFor(post.author.image).width(40).height(40).url()}
+                            alt={post.author.name}
+                          />
+                        )}
+                        <span>{post.author.name}</span>
+                      </div>
+                    )}
+                    
+                    <Link 
+                      to={`/blog/${post.slug.current}`}
+                      className="blog-card-read-more"
+                    >
+                      Read More
+                      <i className="fas fa-arrow-right"></i>
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default BlogSection

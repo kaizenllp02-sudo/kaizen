@@ -1,7 +1,6 @@
-/* Blog Page Styles */
-.blog-page {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0a0e1a 0%, #151922 50%, #1a1f2e 100%);
+/* Blog Section Styles */
+.blog-section {
+  /* background: linear-gradient(135deg, #0a0e1a 0%, #151922 50%, #1a1f2e 100%); */
   color: #e4e7eb;
 }
 
