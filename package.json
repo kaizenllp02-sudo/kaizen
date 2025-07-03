@@ -16,6 +16,9 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/material": "^7.2.0",
+    "@portabletext/react": "^3.2.1",
+    "@sanity/client": "^7.6.0",
+    "@sanity/image-url": "^1.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.3"
