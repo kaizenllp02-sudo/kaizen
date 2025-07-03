@@ -20,6 +20,13 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
+      rows: 3,
+      description: 'A short description of the post for previews',
+    }),
+    defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',

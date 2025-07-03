@@ -32,6 +32,7 @@ h1, h2, h3, h4, h5 {
 /* Layout helpers */
 section {
   padding: 60px 20px;
+  padding-top: 0;
   max-width: 1200px;
   margin: auto;
 } 

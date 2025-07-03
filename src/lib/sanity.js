@@ -20,7 +20,23 @@ export function urlFor(source) {
 }
 
 // GROQ queries for blog posts
-export const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc)`
+export const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc){
+  _id,
+  title,
+  slug,
+  mainImage,
+  publishedAt,
+  excerpt,
+  body,
+  author->{
+    name,
+    image
+  },
+  categories[]->{
+    _id,
+    title
+  }
+}`
 
 export const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   title,
