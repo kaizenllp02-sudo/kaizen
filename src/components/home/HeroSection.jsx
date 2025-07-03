@@ -19,6 +19,33 @@ export default function HeroSection() {
         <div className="scroll-down-indicator">
           <i className="fa-solid fa-angle-down"></i>
         </div>
+
+        <div className="logo-carousel">
+          <div className="logo-track">
+            <img src="/logos/britannia.png" alt="Britannia" />
+            <img src="/logos/lorealparis.jpg" alt="L’Oréal Paris" />
+            <img src="/logos/unilever.png" alt="Unilever" />
+            <img src="/logos/colors.svg" alt="Colors HD" />
+            <img src="/logos/cavinkare.jpg" alt="CavinKare" />
+            <img src="/logos/nivea.png" alt="Nivea" />
+            <img src="/logos/ub.svg" alt="United Breweries Limited" />
+            <img src="/logos/garnier.jpg" alt="Garnier" />
+            <img src="/logos/chateau.png" alt="Chateau Indage" />
+            <img src="/logos/apb.png" alt="Asia Pacific Breweries Singapore" />
+            
+            <img src="/logos/britannia.png" alt="Britannia" />
+            <img src="/logos/lorealparis.jpg" alt="L’Oréal Paris" />
+            <img src="/logos/unilever.png" alt="Unilever" />
+            <img src="/logos/colors.svg" alt="Colors HD" />
+            <img src="/logos/cavinkare.jpg" alt="CavinKare" />
+            <img src="/logos/nivea.png" alt="Nivea" />
+            <img src="/logos/ub.svg" alt="United Breweries Limited" />
+            <img src="/logos/garnier.jpg" alt="Garnier" />
+            <img src="/logos/chateau.png" alt="Chateau Indage" />
+            <img src="/logos/apb.png" alt="Asia Pacific Breweries Singapore" />
+          </div>
+        </div>
+        <h4 className="clients-title">Brands That Trust Kaizen</h4>
       </div>
     </section>
   );
