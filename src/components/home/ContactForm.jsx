@@ -160,63 +160,10 @@ export default function ContactForm() {
         </p>
       </div>
       <div className="contact-container">
-
-        {/* Left Section */}
-        <div className="contact-info">
-          <div className="contact-logo">
-            <div className="dummy-logo">
-              <i className="fa-solid fa-shop" style={{fontSize: '48px', color: 'rgba(223, 160, 6, 0.9)', marginBottom: '10px'}}></i>
-            </div>
-            <h2>Kaizen Marketing</h2>
-            <p>Transforming ideas into impactful campaigns.</p>
-          </div>
-
-          {/* <form 
-            onSubmit={handleNewsletterSubmit}
-            style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
-          >
-            <label htmlFor="newsletter-email" style={{ marginBottom: '0.5rem', color: '#f2f2f2' }}>
-              Subscribe to our newsletter
-            </label>
-            
-            {newsletterMessage && (
-              <div style={{
-                padding: '10px',
-                borderRadius: '6px',
-                backgroundColor: newsletterMessage.includes('Successfully') ? '#4caf50' : '#f44336',
-                color: '#fff',
-                fontSize: '14px',
-                textAlign: 'center'
-              }}>
-                {newsletterMessage}
-              </div>
-            )}
-            
-            <TextField 
-              name="email"
-              label="Email" 
-              type="email" 
-              required 
-              fullWidth 
-              size="small"
-              value={newsletterData.email}
-              onChange={handleNewsletterChange}
-              sx={textFieldStyle}
-            />
-            <Button 
-              type="submit" 
-              variant="contained"
-              sx={buttonStyle}
-            >
-              Subscribe
-            </Button>
-          </form> */}
-        </div>
-
-        {/* Right Section */}
+        {/* Main Contact Form */}
         <form 
           onSubmit={handleContactSubmit}
-          style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: 1, minWidth: '280px' }}
+          style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: 1, minWidth: '280px', margin: '0 auto', maxWidth: '600px' }}
         >
           {contactMessage && (
             <div style={{
@@ -291,7 +238,7 @@ export default function ContactForm() {
           <Button 
             type="submit" 
             variant="contained"
-            sx={{...buttonStyle, alignSelf: 'flex-start'}}
+            sx={buttonStyle}
           >
             Send Message
           </Button>
