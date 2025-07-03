@@ -103,7 +103,7 @@ const BlogPostContent = () => {
             <p>{error}</p>
             <div className="error-actions">
               <button onClick={() => navigate('/blog')} className="btn-primary">
-                Back to Blog
+                Back
               </button>
               <button onClick={() => window.location.reload()} className="btn-secondary">
                 Try Again
@@ -124,7 +124,7 @@ const BlogPostContent = () => {
             <h2>Article Not Found</h2>
             <p>The article you're looking for doesn't exist.</p>
             <Link to="/blog" className="btn-primary">
-              Back to Blog
+              Back
             </Link>
           </div>
         </div>
@@ -139,7 +139,7 @@ const BlogPostContent = () => {
         <div className="blog-post-nav">
           <Link to="/blog" className="back-link">
             <i className="fas fa-arrow-left"></i>
-            Back to Blog
+            Back
           </Link>
         </div>
 
@@ -155,24 +155,33 @@ const BlogPostContent = () => {
           )}
           
           <div className="blog-post-header-content">
-            <div className="blog-post-meta">
+            {/* Date and Author side by side */}
+            <div className="blog-post-meta-row">
               {post.publishedAt && (
-                <time dateTime={post.publishedAt}>
-                  {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
-                </time>
+                <div className="blog-post-date">
+                  <time dateTime={post.publishedAt}>
+                    {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </time>
+                </div>
               )}
               
-              {post.categories && post.categories.length > 0 && (
-                <div className="blog-post-categories">
-                  {post.categories.map(category => (
-                    <span key={category._id} className="category-tag">
-                      {category.title}
-                    </span>
-                  ))}
+              {post.author && (
+                <div className="blog-post-author">
+                  {post.author.image && (
+                    <img
+                      src={urlFor(post.author.image).width(40).height(40).url()}
+                      alt={post.author.name}
+                      className="author-avatar"
+                    />
+                  )}
+                  <div className="author-info">
+                    <span className="author-name">{post.author.name}</span>
+                    <span className="author-label">Author</span>
+                  </div>
                 </div>
               )}
             </div>
@@ -183,19 +192,13 @@ const BlogPostContent = () => {
               <p className="blog-post-excerpt">{post.excerpt}</p>
             )}
             
-            {post.author && (
-              <div className="blog-post-author">
-                {post.author.image && (
-                  <img
-                    src={urlFor(post.author.image).width(60).height(60).url()}
-                    alt={post.author.name}
-                    className="author-avatar"
-                  />
-                )}
-                <div className="author-info">
-                  <span className="author-name">{post.author.name}</span>
-                  <span className="author-label">Author</span>
-                </div>
+            {post.categories && post.categories.length > 0 && (
+              <div className="blog-post-categories">
+                {post.categories.map(category => (
+                  <span key={category._id} className="category-tag">
+                    {category.title}
+                  </span>
+                ))}
               </div>
             )}
           </div>
