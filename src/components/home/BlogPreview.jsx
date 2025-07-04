@@ -66,7 +66,7 @@ const BlogPreview = () => {
             <p>Stay updated with our latest thoughts, strategies, and industry insights</p>
           </div>
           <Link to="/blog" className="blog-preview-see-all">
-            See All Blogs
+            See All
             <i className="fas fa-arrow-right"></i>
           </Link>
         </div>

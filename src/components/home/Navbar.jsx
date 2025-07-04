@@ -7,6 +7,21 @@ export default function Navbar() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const scrollToContactForm = (e) => {
+    e.preventDefault();
+    const contactForm = document.querySelector('.contact-form-section, .contact-form, [class*="contact"]');
+    if (contactForm) {
+      contactForm.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    // Close mobile menu if open
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <>
       <nav className={`kaizen-navbar ${isMenuOpen ? 'mobile-expanded' : ''}`}>
@@ -35,7 +50,7 @@ export default function Navbar() {
               <a href="/blog" className="kaizen-menu-link">Blog</a>
             </li>
             <li className="kaizen-menu-list">
-              <a href="/contact-us" className="kaizen-menu-link">Contact Us</a>
+              <a href="#contact" className="kaizen-menu-link" onClick={scrollToContactForm}>Contact Us</a>
             </li>
           </ul>
         </section>
@@ -61,7 +76,7 @@ export default function Navbar() {
               <a href="/blog" className="kaizen-menu-link" onClick={toggleMenu}>Blog</a>
             </li>
             <li className="kaizen-menu-list">
-              <a href="/contact-us" className="kaizen-menu-link" onClick={toggleMenu}>Contact Us</a>
+              <a href="#contact" className="kaizen-menu-link" onClick={scrollToContactForm}>Contact Us</a>
             </li>
           </ul>
         </div>

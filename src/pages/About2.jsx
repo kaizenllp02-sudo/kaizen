@@ -64,21 +64,40 @@ export default function About() {
                   
                   {/* Stats Section */}
                   <div className="about-stats">
-                    <div className="about-stat-item">
-                      <div className="about-stat-number">300+</div>
-                      <div className="about-stat-label">Completed Projects</div>
+                    <div className="stat-item">
+                      <div className="stat-number">300+</div>
+                      <div className="stat-label">Completed Projects</div>
                     </div>
-                    <div className="about-stat-item">
-                      <div className="about-stat-number">50+</div>
-                      <div className="about-stat-label">Satisfied Customers</div>
+                    <div className="stat-item">
+                      <div className="stat-number">50+</div>
+                      <div className="stat-label">Satisfied Customers</div>
                     </div>
-                    <div className="about-stat-item">
-                      <div className="about-stat-number">15+</div>
-                      <div className="about-stat-label">Years Of Mastery</div>
+                    <div className="stat-item">
+                      <div className="stat-number">15+</div>
+                      <div className="stat-label">Years Of Mastery</div>
                     </div>
-                    <div className="about-stat-item">
-                      <div className="about-stat-number">25+</div>
-                      <div className="about-stat-label">Brand Partners</div>
+                    <div className="stat-item">
+                      <div className="stat-number">25+</div>
+                      <div className="stat-label">Brand Partners</div>
+                    </div>
+                  </div>
+
+                  {/* Team Preview & Watch Intro */}
+                  <div className="about-bottom">
+                    <div className="team-preview">
+                      <div className="team-avatars">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Team member" className="avatar" />
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b52f5ca2?w=60&h=60&fit=crop&crop=face" alt="Team member" className="avatar" />
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="Team member" className="avatar" />
+                      </div>
+                    </div>
+                    <div className="watch-intro">
+                      <div className="play-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                      <span>WATCH INTRO</span>
                     </div>
                   </div>
                 </div>
@@ -90,42 +109,48 @@ export default function About() {
                       // Loading placeholder
                       <>
                         <div className="blog-card loading">
-                          <div className="blog-content">
-                            <div className="blog-title-row">
-                              <h4 className="blog-title">Loading...</h4>
-                              <p className="blog-date">...</p>
-                            </div>
-                            <p className="blog-excerpt">Loading content...</p>
+                          <div className="blog-header">
+                            <span className="blog-tag">Loading...</span>
                           </div>
+                          <div className="blog-image-placeholder"></div>
                         </div>
                         <div className="blog-card loading">
-                          <div className="blog-content">
-                            <div className="blog-title-row">
-                              <h4 className="blog-title">Loading...</h4>
-                              <p className="blog-date">...</p>
-                            </div>
-                            <p className="blog-excerpt">Loading content...</p>
+                          <div className="blog-header">
+                            <span className="blog-tag">Loading...</span>
                           </div>
+                          <div className="blog-image-placeholder"></div>
                         </div>
                       </>
                     ) : (
                       latestBlogs.map((blog, index) => (
                         <Link key={blog._id} to={`/blog/${blog.slug.current}`} className="blog-card-link">
                           <div className="blog-card">
-                            <div className="blog-content">
-                              <div className="blog-title-row">
-                                <h4 className="blog-title">{blog.title}</h4>
-                                <p className="blog-date">
-                                  {new Date(blog.publishedAt).toLocaleDateString('en-US', {
-                                    month: 'short',
-                                    day: 'numeric',
-                                    year: 'numeric'
-                                  })}
-                                </p>
-                              </div>
-                              {blog.excerpt && (
-                                <p className="blog-excerpt">{blog.excerpt}</p>
+                            <div className="blog-header">
+                              <span className="blog-tag">Blog</span>
+                              {blog.categories && blog.categories[0] && (
+                                <span className="blog-tag">{blog.categories[0].title}</span>
                               )}
+                            </div>
+                            {blog.mainImage ? (
+                              <img 
+                                src={urlFor(blog.mainImage).width(300).height(200).fit('crop').url()} 
+                                alt={blog.title}
+                                className="blog-image" 
+                              />
+                            ) : (
+                              <div className="blog-image-placeholder">
+                                <span>No Image</span>
+                              </div>
+                            )}
+                            <div className="blog-content">
+                              <h4 className="blog-title">{blog.title}</h4>
+                              <p className="blog-date">
+                                {new Date(blog.publishedAt).toLocaleDateString('en-US', {
+                                  month: 'short',
+                                  day: 'numeric',
+                                  year: 'numeric'
+                                })}
+                              </p>
                             </div>
                           </div>
                         </Link>
@@ -160,6 +185,24 @@ export default function About() {
                   <li>Strategize. Execute. Improve.</li>
                   <li>Use the PDCA (Plan-Do-Check-Act) cycle for every campaign</li>
                 </ul>
+              </div>
+            </div>
+
+            <div className="about-section full-width">
+              <h2>Leadership Team</h2>
+              <div className="team-members">
+                <div className="team-member">
+                  <strong>Kamlesh Shukla (Founder & Managing Director)</strong>
+                  Former Nielsen executive with 30 years of expertise in market research and consumer insights.
+                </div>
+                <div className="team-member">
+                  <strong>Suneeta Bhagatjee (Executive Director)</strong>
+                  Former Dish TV and Gitanjali Gems executive with 18 years of experience in brand and channel marketing.
+                </div>
+                <div className="team-member">
+                  <strong>Shyam Karmakar (Executive Director)</strong>
+                  Former Fortis, MarketRx, and IGIDR consultant with over 30 years of research experience.
+                </div>
               </div>
             </div>
           </div>
