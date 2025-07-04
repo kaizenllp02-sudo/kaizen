@@ -7,8 +7,8 @@ export default function AboutKaizen() {
       <div className="about-container">
         <h2 className="about-heading">Who We Are</h2>
         <p className="about-description">
-          Kaizen is a full-service marketing agency driving impactful campaigns across both digital and traditional spaces.
-          From FMCG to fashion, we help brands grow, engage, and convert through strategy, creativity, and flawless execution.
+          Kaizen is a research-driven marketing agency that blends strategy, creativity, and flawless execution.  
+We specialize in turning customer insights into campaigns that drive awareness, trial, and loyalty.
         </p>
         
         <div className="about-keywords">

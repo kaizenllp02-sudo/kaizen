@@ -123,8 +123,9 @@ const ServicesOffered = () => {
 
         {/* CTA Section */}
         <div className="services-cta">
-          <h3>Ready to elevate your brand?</h3>
-          <p>Let's discuss how our services can drive your business forward</p>
+          <h3>Looking to scale your marketing efforts<br />
+          with research-backed campaigns?</h3>
+          <p>Let’s make it happen — the Kaizen way.</p>
           <button onClick={scrollToContact} className="services-cta-button">
             Get Started Today
             <i className="fas fa-arrow-right"></i>

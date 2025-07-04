@@ -7,12 +7,12 @@ export default function HeroSection() {
     <section className="kaizen-hero">
       <div className="hero-content">
         <h1 className="hero-title">
-          Marketing that moves <br />
-          your business forward.
+          Marketing That Never Stops Improving<br />
+          Innovative Strategies. Real Results.
         </h1>
         <p className="hero-subtitle">
-          From digital campaigns to real-world events — we do it all. <br />
-          Let’s create something amazing together.
+          At Kaizen, we believe there’s always a better way to engage your audience<br />
+          — with research-led, customer-first marketing. 
         </p>
         <button className="hero-cta">Get in Touch</button>
 
