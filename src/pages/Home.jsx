@@ -6,7 +6,7 @@ import Turnover from '../components/home/Turnover';
 import ServicesOffered from '../components/home/ServicesOffered';
 // import CTACard from '../components/home/CTACard';
 // import PastWorks from '../components/home/PastWorks';
-// import Testimonials from '../components/home/Testimonials';
+import Testimonials from '../components/home/Testimonials';
 import BlogPreview from '../components/home/BlogPreview';
 import ContactForm from '../components/home/ContactForm';
 import FAQ from '../components/home/FAQ.jsx';
@@ -24,7 +24,7 @@ export default function Home() {
       <ServicesOffered />
       {/* <CTACard /> */}
       {/* <PastWorks /> */}
-      {/* <Testimonials /> */}
+      <Testimonials />
       <BlogPreview />
       <ContactForm />
       <FAQ />
