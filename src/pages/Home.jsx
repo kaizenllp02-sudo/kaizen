@@ -7,7 +7,7 @@ import AboutKaizen from '../components/home/AboutKaizen';
 // import CTACard from '../components/home/CTACard';
 // import PastWorks from '../components/home/PastWorks';
 // import Testimonials from '../components/home/Testimonials';
-// import BlogPreview from '../components/home/BlogPreview';
+import BlogPreview from '../components/home/BlogPreview';
 import ContactForm from '../components/home/ContactForm';
 import FAQ from '../components/home/FAQ.jsx';
 import FooterMenu from '../components/home/FooterMenu.jsx';
@@ -25,7 +25,7 @@ export default function Home() {
       {/* <CTACard /> */}
       {/* <PastWorks /> */}
       {/* <Testimonials /> */}
-      {/* <BlogPreview /> */}
+      <BlogPreview />
       <ContactForm />
       <FAQ />
       <FooterMenu />
