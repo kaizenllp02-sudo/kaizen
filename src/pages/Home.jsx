@@ -3,7 +3,7 @@ import HeroSection from '../components/home/HeroSection.jsx';
 // import CompaniesWorkedWith from '../components/home/CompaniesWorkedWith';
 import AboutKaizen from '../components/home/AboutKaizen';
 // import Turnover from '../components/home/Turnover';
-// import ServicesOffered from '../components/home/ServicesOffered';
+import ServicesOffered from '../components/home/ServicesOffered';
 // import CTACard from '../components/home/CTACard';
 // import PastWorks from '../components/home/PastWorks';
 // import Testimonials from '../components/home/Testimonials';
@@ -21,7 +21,7 @@ export default function Home() {
       {/* <CompaniesWorkedWith /> */}
       <AboutKaizen />
       {/* <Turnover /> */}
-      {/* <ServicesOffered /> */}
+      <ServicesOffered />
       {/* <CTACard /> */}
       {/* <PastWorks /> */}
       {/* <Testimonials /> */}

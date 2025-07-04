@@ -21,8 +21,7 @@ export default function AboutKaizen() {
             { text: "Digital Marketing", color: "#ffd54f" },
             { text: "POS Materials", color: "#f06292" },
             { text: "Trade Shows", color: "#7986cb" },
-            { text: "Event Sponsorships", color: "#a1887f" },
-            { text: "Collaborations", color: "#90a4ae" }
+            { text: "Event Sponsorships & Collaborations", color: "#90a4ae" }
           ].map((item, idx) => (
             <span
               key={idx}
