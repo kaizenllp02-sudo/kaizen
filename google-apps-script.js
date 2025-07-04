@@ -155,42 +155,67 @@ function sendContactFormEmail(formData) {
   const subject = 'New Contact Form Submission - Kaizen Marketing';
   
   const htmlBody = `
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #333; border-bottom: 2px solid #4285f4; padding-bottom: 10px;">
-        New Contact Form Submission
-      </h2>
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+      <!-- Header Section -->
+      <div style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 25px 20px; text-align: center; border-radius: 8px 8px 0 0;">
+        <h2 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 600;">New Contact Form Submission</h2>
+        <p style="color: #cccccc; margin: 8px 0 0 0; font-size: 14px;">Kaizen Marketing</p>
+      </div>
       
-      <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-        <h3 style="color: #333; margin-top: 0;">Contact Details:</h3>
+      <!-- Main Content -->
+      <div style="padding: 30px; background-color: #ffffff;">
+        <!-- Contact Details Section -->
+        <div style="background-color: #f8f9fa; padding: 25px; border-radius: 8px; border-left: 4px solid #dc3545; margin: 20px 0;">
+          <h3 style="color: #333333; margin: 0 0 15px 0; font-size: 18px; font-weight: 600;">Contact Details:</h3>
+          
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555555; width: 120px;">Name:</td>
+              <td style="padding: 8px 0; color: #333333;">${formData.firstName} ${formData.lastName}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555555;">Email:</td>
+              <td style="padding: 8px 0;"><a href="mailto:${formData.email}" style="color: #dc3545; text-decoration: none;">${formData.email}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555555;">Phone:</td>
+              <td style="padding: 8px 0; color: #333333;">${formData.phone || 'Not provided'}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555555;">Submitted:</td>
+              <td style="padding: 8px 0; color: #333333;">${new Date(formData.timestamp).toLocaleString()}</td>
+            </tr>
+          </table>
+        </div>
         
-        <table style="width: 100%; border-collapse: collapse;">
-          <tr>
-            <td style="padding: 8px 0; font-weight: bold; color: #555;">Name:</td>
-            <td style="padding: 8px 0;">${formData.firstName} ${formData.lastName}</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px 0; font-weight: bold; color: #555;">Email:</td>
-            <td style="padding: 8px 0;"><a href="mailto:${formData.email}">${formData.email}</a></td>
-          </tr>
-          <tr>
-            <td style="padding: 8px 0; font-weight: bold; color: #555;">Phone:</td>
-            <td style="padding: 8px 0;">${formData.phone || 'Not provided'}</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px 0; font-weight: bold; color: #555;">Submitted:</td>
-            <td style="padding: 8px 0;">${new Date(formData.timestamp).toLocaleString()}</td>
-          </tr>
-        </table>
+        <!-- Message Section -->
+        <div style="background-color: #ffffff; border: 1px solid #e0e0e0; padding: 25px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="color: #333333; margin: 0 0 15px 0; font-size: 18px; font-weight: 600;">Message:</h3>
+          <p style="line-height: 1.6; color: #555555; margin: 0; white-space: pre-wrap;">${formData.message}</p>
+        </div>
+        
+        <!-- Action Required Section -->
+        <div style="background-color: #fff5f5; border: 1px solid #fed7d7; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #dc3545;">
+          <p style="margin: 0; color: #c53030; font-weight: 600;">
+            ⚡ <strong>Action Required:</strong> Please respond to this inquiry within 24 hours to maintain excellent customer service.
+          </p>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div style="text-align: center; margin: 25px 0;">
+          <a href="mailto:${formData.email}?subject=Re: Your inquiry to Kaizen Marketing" style="display: inline-block; background-color: #dc3545; color: #ffffff; text-decoration: none; padding: 12px 25px; border-radius: 6px; font-weight: 600; font-size: 14px; margin: 0 10px;">
+            Reply via Email
+          </a>
+          <a href="tel:${formData.phone}" style="display: inline-block; background-color: #ffffff; color: #dc3545; text-decoration: none; padding: 12px 25px; border-radius: 6px; font-weight: 600; font-size: 14px; border: 2px solid #dc3545; margin: 0 10px;">
+            Call ${formData.phone ? 'Customer' : 'N/A'}
+          </a>
+        </div>
       </div>
       
-      <div style="background-color: #fff; border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
-        <h3 style="color: #333; margin-top: 0;">Message:</h3>
-        <p style="line-height: 1.6; color: #555;">${formData.message}</p>
-      </div>
-      
-      <div style="margin-top: 20px; padding: 15px; background-color: #e8f5e8; border-radius: 8px;">
-        <p style="margin: 0; color: #2e7d32;">
-          <strong>Action Required:</strong> Please respond to this inquiry within 24 hours.
+      <!-- Footer -->
+      <div style="background-color: #f8f9fa; padding: 20px 30px; border-radius: 0 0 8px 8px; text-align: center; border-top: 1px solid #e0e0e0;">
+        <p style="color: #777777; font-size: 12px; margin: 0;">
+          This email was automatically generated from your website contact form.
         </p>
       </div>
     </div>
@@ -206,26 +231,63 @@ function sendContactFormEmail(formData) {
   // Send auto-reply to the customer
   const autoReplySubject = 'Thank you for contacting Kaizen Marketing';
   const autoReplyBody = `
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #333;">Thank you for reaching out!</h2>
-      
-      <p>Dear ${formData.firstName},</p>
-      
-      <p>Thank you for contacting Kaizen Marketing. We have received your message and appreciate your interest in our services.</p>
-      
-      <p>Our team will review your inquiry and get back to you within 24 hours. In the meantime, feel free to explore our website to learn more about our marketing solutions.</p>
-      
-      <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-        <h3>Your Message Summary:</h3>
-        <p><strong>Subject:</strong> General Inquiry</p>
-        <p><strong>Message:</strong> ${formData.message.substring(0, 150)}${formData.message.length > 150 ? '...' : ''}</p>
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+      <!-- Header Section -->
+      <div style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 30px 20px; text-align: center; border-radius: 8px 8px 0 0;">
+        
+        <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 600;">Thank You for Reaching Out!</h1>
+        <p style="color: #cccccc; margin: 10px 0 0 0; font-size: 16px;">Kaizen Marketing</p>
       </div>
       
-      <p>Best regards,<br>
-      The Kaizen Marketing Team</p>
-      
-      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #666;">
-        <p>This is an automated response. Please do not reply to this email.</p>
+      <!-- Main Content -->
+      <div style="padding: 40px 30px; background-color: #ffffff;">
+        <h2 style="color: #333333; margin: 0 0 20px 0; font-size: 24px; font-weight: 600;">
+          Hello ${formData.firstName}!
+        </h2>
+        
+        <p style="color: #555555; line-height: 1.6; font-size: 16px; margin-bottom: 25px;">
+          Thank you for contacting Kaizen Marketing. We have received your message and truly appreciate your interest in our services.
+        </p> 
+        
+        <p style="color: #555555; line-height: 1.6; font-size: 16px; margin-bottom: 25px;">
+          Our team will review your inquiry and respond within 24 hours
+        </p> 
+
+        <!-- Call to Action -->
+        <div style="text-align: center; margin: 30px 0;">
+          <p style="color: #555555; margin-bottom: 20px;">In the meantime, explore our services and success stories:</p>
+          <a href="https://your-website.com/services" style="display: inline-block; background-color: #dc3545; color: #ffffff; text-decoration: none; padding: 12px 30px; border-radius: 6px; font-weight: 600; font-size: 16px; margin: 0 10px 10px 0;">
+            Our Services
+          </a>
+          <a href="https://your-website.com/portfolio" style="display: inline-block; background-color: #ffffff; color: #dc3545; text-decoration: none; padding: 12px 30px; border-radius: 6px; font-weight: 600; font-size: 16px; border: 2px solid #dc3545; margin: 0 10px 10px 0;">
+            View Portfolio
+          </a>
+        </div>
+             
+      <!-- Footer -->
+      <div style="background-color: #f8f9fa; padding: 25px 30px; border-radius: 0 0 8px 8px; text-align: center;">
+        <p style="color: #333333; margin: 0 0 10px 0; font-weight: 600; font-size: 16px;">
+          Best regards,
+        </p>
+        <p style="color: #333333; margin: 0 0 15px 0; font-size: 16px;">
+          <strong>The Kaizen Marketing Team</strong>
+        </p>
+        
+        <!-- Contact Info -->
+        <div style="border-top: 1px solid #dddddd; padding-top: 15px; margin-top: 15px;">
+          <p style="color: #777777; font-size: 14px; margin: 5px 0;">
+            📧 pooja@kaizenevents&promotionllp.com | 📞 +91 9892787127
+          </p>
+          <p style="color: #777777; font-size: 14px; margin: 5px 0;">
+            📍 L-355, Dreams Mall, Bhandup West, Mumbai 400078
+          </p>
+        </div>
+        
+        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #dddddd;">
+          <p style="color: #999999; font-size: 12px; margin: 0;">
+            This is an automated response. We'll be in touch with you personally very soon!
+          </p>
+        </div>
       </div>
     </div>
   `;
@@ -238,27 +300,65 @@ function sendContactFormEmail(formData) {
 }
 
 function sendNewsletterWelcomeEmail(email) {
-  const subject = 'Welcome to Kaizen Marketing Newsletter!';
+  const subject = 'Welcome to Kaizen Marketing - Your Journey to Excellence Begins Now';
   
   const htmlBody = `
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #333;">Welcome to Our Newsletter!</h2>
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+      <!-- Header Section -->
+      <div style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 30px 20px; text-align: center; border-radius: 8px 8px 0 0;">
+        <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 600;">Welcome to Kaizen Marketing</h1>
+        <p style="color: #cccccc; margin: 10px 0 0 0; font-size: 16px;">Transforming Businesses Through Excellence</p>
+      </div>
       
-      <p>Thank you for subscribing to the Kaizen Marketing newsletter. You're now part of our community!</p>
-      
-      <p>You'll receive:</p>
-      <ul>
-        <li>Latest marketing insights and trends</li>
-        <li>Case studies and success stories</li>
-        <li>Exclusive tips and strategies</li>
-        <li>Industry news and updates</li>
-      </ul>
-      
-      <p>We promise to deliver valuable content and respect your inbox.</p>
-      
-      <p>Best regards,<br>
-      The Kaizen Marketing Team</p>
-    </div>
+      <!-- Main Content -->
+      <div style="padding: 40px 30px; background-color: #ffffff;">
+        <h2 style="color: #333333; margin: 0 0 20px 0; font-size: 24px; font-weight: 600; text-align: center;">
+          Thank you for joining our community!
+        </h2>
+        
+        <p style="color: #555555; line-height: 1.6; font-size: 16px; margin-bottom: 25px;">
+          We're thrilled to have you on board. As a subscriber to the Kaizen Marketing newsletter, you're now part of an exclusive community dedicated to continuous improvement and marketing excellence.
+        </p>
+        
+        <!-- What You'll Receive Section -->
+        <div style="background-color: #f8f9fa; padding: 25px; border-radius: 8px; border-left: 4px solid #dc3545; margin: 25px 0;">
+          <h3 style="color: #333333; margin: 0 0 15px 0; font-size: 18px; font-weight: 600;">What You'll Receive:</h3>
+          <ul style="color: #555555; line-height: 1.8; margin: 0; padding-left: 20px;">
+            <li><strong>Weekly Marketing Insights:</strong> Latest trends and strategies that drive results</li>
+            <li><strong>Exclusive Case Studies:</strong> Real success stories from our clients</li>
+            <li><strong>Industry Analysis:</strong> Deep dives into market developments</li>
+            <li><strong>Actionable Tips:</strong> Practical advice you can implement immediately</li>
+            <li><strong>Early Access:</strong> Be the first to know about our new services and offerings</li>
+          </ul>
+        </div>
+        
+        <!-- Call to Action -->
+        <div style="text-align: center; margin: 30px 0;">
+          <p style="color: #555555; margin-bottom: 20px;">Ready to explore what we can do for your business?</p>
+          <a href="https://your-website.com/contact" style="display: inline-block; background-color: #dc3545; color: #ffffff; text-decoration: none; padding: 12px 30px; border-radius: 6px; font-weight: 600; font-size: 16px;">
+            Get in Touch
+          </a>
+        </div>
+        
+ 
+      <!-- Footer -->
+      <div style="background-color: #f8f9fa; padding: 25px 30px; border-radius: 0 0 8px 8px; text-align: center;">
+        <p style="color: #333333; margin: 0 0 10px 0; font-weight: 600; font-size: 16px;">
+          Best regards,
+        </p>
+        <p style="color: #333333; margin: 0 0 15px 0; font-size: 16px;">
+          <strong>The Kaizen Marketing Team</strong>
+        </p>
+        
+        <!-- Contact Info -->
+        <div style="border-top: 1px solid #dddddd; padding-top: 15px; margin-top: 15px;">
+          <p style="color: #777777; font-size: 14px; margin: 5px 0;">
+            📧 pooja@kaizenevents&promotionllp.com | 📞 +91 9892787127
+          </p>
+          <p style="color: #777777; font-size: 14px; margin: 5px 0;">
+            📍 L-355, Dreams Mall, Bhandup West, Mumbai 400078
+          </p>
+        </div>
   `;
   
   MailApp.sendEmail({
