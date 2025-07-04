@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom'
 import '../../styles/servicesOffered.css'
 
 const ServicesOffered = () => {
+  // Function to scroll to contact form
+  const scrollToContact = () => {
+    const contactSection = document.querySelector('.kaizen-contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   const services = [
     { 
       text: "Strategic Planning Brand", 
@@ -114,10 +125,10 @@ const ServicesOffered = () => {
         <div className="services-cta">
           <h3>Ready to elevate your brand?</h3>
           <p>Let's discuss how our services can drive your business forward</p>
-          <Link to="/contact" className="services-cta-button">
+          <button onClick={scrollToContact} className="services-cta-button">
             Get Started Today
             <i className="fas fa-arrow-right"></i>
-          </Link>
+          </button>
         </div>
       </div>
     </section>

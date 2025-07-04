@@ -196,19 +196,21 @@
 }
 
 .services-cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 32px;
-    background: linear-gradient(135deg, rgba(223, 160, 6, 0.9), rgba(255, 193, 7, 0.8));
-    border: none;
-    border-radius: 12px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(223, 160, 6, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, rgba(223, 160, 6, 0.9), rgba(255, 193, 7, 0.8));
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(223, 160, 6, 0.3);
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .services-cta-button:hover {
