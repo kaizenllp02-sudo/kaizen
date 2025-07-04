@@ -1,14 +1,61 @@
 import React, { useState } from 'react';
+import { env } from '../../lib/env';
 import '../../styles/footerMenu.css';
 
 export default function FooterMenu() {
     const [openSections, setOpenSections] = useState({});
+    const [newsletterData, setNewsletterData] = useState({ email: '' });
+    const [newsletterMessage, setNewsletterMessage] = useState(null);
 
     const toggleSection = (sectionName) => {
         setOpenSections(prev => ({
             ...prev,
             [sectionName]: !prev[sectionName]
         }));
+    };
+
+    const handleNewsletterChange = (e) => {
+        setNewsletterData({ email: e.target.value });
+    };
+
+    const handleNewsletterSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!newsletterData.email) {
+            setNewsletterMessage('Please enter your email address.');
+            return;
+        }
+
+        try {
+            const GOOGLE_SCRIPT_URL = env.GOOGLE_SCRIPT_URL;
+            
+            if (!GOOGLE_SCRIPT_URL) {
+                throw new Error('Google Apps Script URL not configured');
+            }
+            
+            const params = new URLSearchParams();
+            params.append('type', 'newsletter');
+            params.append('email', newsletterData.email);
+            params.append('timestamp', new Date().toISOString());
+
+            await fetch(`${GOOGLE_SCRIPT_URL}?${params.toString()}`, {
+                method: 'GET',
+                mode: 'no-cors'
+            });
+
+            setNewsletterMessage('Successfully subscribed to newsletter!');
+            setNewsletterData({ email: '' });
+
+            // Clear success message after 5 seconds
+            setTimeout(() => setNewsletterMessage(null), 5000);
+
+        } catch (error) {
+            console.error('Error submitting newsletter:', error);
+            setNewsletterMessage('Failed to subscribe. Please try again.');
+            
+            // Clear error message after 5 seconds
+            setTimeout(() => setNewsletterMessage(null), 5000);
+        }
     };
     return (
         <section className="footer-menu-section">
@@ -29,8 +76,29 @@ export default function FooterMenu() {
                     </p>
 
                     {/* Newsletter Subscription */}
-                    <form className="newsletter-form">
-                        <input type="email" placeholder="Subscribe to our newsletter" />
+                    {newsletterMessage && (
+                        <div style={{
+                            padding: '12px 16px',
+                            borderRadius: '6px',
+                            backgroundColor: newsletterMessage.includes('Successfully') ? '#4caf50' : '#f44336',
+                            color: '#fff',
+                            fontSize: '14px',
+                            marginBottom: '12px',
+                            textAlign: 'center',
+                            fontWeight: '500',
+                            boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
+                        }}>
+                            {newsletterMessage}
+                        </div>
+                    )}
+                    <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
+                        <input 
+                            type="email" 
+                            placeholder="Subscribe to our newsletter"
+                            value={newsletterData.email}
+                            onChange={handleNewsletterChange}
+                            required
+                        />
                         <button type="submit">
                             <i className="fa-solid fa-paper-plane"></i>
                         </button>

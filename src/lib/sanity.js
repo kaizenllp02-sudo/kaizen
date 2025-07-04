@@ -1,10 +1,11 @@
 import { createClient } from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
+import { env } from './env'
 
-// Sanity client configuration using environment variables
+// Sanity client configuration using centralized environment variables
 export const client = createClient({
-  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
-  dataset: import.meta.env.VITE_SANITY_DATASET || 'production',
+  projectId: env.SANITY_PROJECT_ID,
+  dataset: env.SANITY_DATASET,
   useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
   apiVersion: '2023-05-03',
 })

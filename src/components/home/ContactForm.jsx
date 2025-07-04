@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
+import { env } from '../../lib/env';
 import '../../styles/contactform.css';
 
 export default function ContactForm() {
@@ -12,28 +13,14 @@ export default function ContactForm() {
     message: '',
   });
 
-  // Form state for newsletter
-  const [newsletterData, setNewsletterData] = useState({
-    email: '',
-  });
-
   // Success/error messages
   const [contactMessage, setContactMessage] = useState(null);
-  const [newsletterMessage, setNewsletterMessage] = useState(null);
 
   // Handle form input changes
   const handleContactChange = (e) => {
     const { name, value } = e.target;
     setContactFormData({
       ...contactFormData,
-      [name]: value,
-    });
-  };
-
-  const handleNewsletterChange = (e) => {
-    const { name, value } = e.target;
-    setNewsletterData({
-      ...newsletterData,
       [name]: value,
     });
   };
@@ -79,64 +66,41 @@ export default function ContactForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: 'b607585b-df32-4754-aa38-e9524e739037',
-          subject: 'New Contact Form Submission - Kaizen Marketing',
-          from_name: 'Kaizen Website Contact Form',
-          ...contactFormData,
-        }),
+      // Google Apps Script Web App URL from environment variable
+      const GOOGLE_SCRIPT_URL = env.GOOGLE_SCRIPT_URL;
+      
+      if (!GOOGLE_SCRIPT_URL) {
+        throw new Error('Google Apps Script URL not configured');
+      }
+      
+      // Create form data as URL parameters
+      const params = new URLSearchParams();
+      params.append('firstName', contactFormData.firstName);
+      params.append('lastName', contactFormData.lastName);
+      params.append('email', contactFormData.email);
+      params.append('phone', contactFormData.phone);
+      params.append('message', contactFormData.message);
+      params.append('timestamp', new Date().toISOString());
+
+      // Use fetch with no-cors mode or create a form submission
+      const response = await fetch(`${GOOGLE_SCRIPT_URL}?${params.toString()}`, {
+        method: 'GET',
+        mode: 'no-cors'
       });
 
-      const result = await response.json();
-      if (result.success) {
-        setContactMessage('Message sent successfully! We\'ll get back to you soon.');
-        setContactFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          message: '',
-        });
-      } else {
-        setContactMessage('Failed to send message. Please try again.');
-      }
+      // Since we can't read the response in no-cors mode, we'll assume success
+      setContactMessage('Message sent successfully! We\'ll get back to you soon.');
+      setContactFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+
     } catch (error) {
+      console.error('Error submitting form:', error);
       setContactMessage('Failed to send message. Please try again.');
-    }
-  };
-
-  const handleNewsletterSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: 'your-web3forms-access-key', // Replace with your actual access key
-          subject: 'New Newsletter Subscription - Kaizen Marketing',
-          from_name: 'Kaizen Website Newsletter',
-          email: newsletterData.email,
-          message: 'New newsletter subscription request',
-        }),
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        setNewsletterMessage('Successfully subscribed to newsletter!');
-        setNewsletterData({ email: '' });
-      } else {
-        setNewsletterMessage('Failed to subscribe. Please try again.');
-      }
-    } catch (error) {
-      setNewsletterMessage('Failed to subscribe. Please try again.');
     }
   };
 
