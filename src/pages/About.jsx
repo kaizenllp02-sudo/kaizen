@@ -162,6 +162,64 @@ export default function About() {
                 </ul>
               </div>
             </div>
+
+            {/* What Sets Us Apart Section */}
+            <div className="what-sets-us-apart">
+              <div className="what-sets-header">
+                <h2 className="what-sets-title">What Sets Us Apart</h2>
+                <p className="what-sets-subtitle">Our unique combination of research expertise, execution excellence, and strategic thinking</p>
+              </div>
+
+              <div className="what-sets-grid">
+                <div className="what-sets-item">
+                  <div className="what-sets-number">01</div>
+                  <div className="what-sets-content">
+                    <h3>Research-Backed Execution</h3>
+                    <p>We bridge the gap between market research and marketing execution — ensuring every campaign is grounded in real consumer insights.</p>
+                  </div>
+                </div>
+
+                <div className="what-sets-item">
+                  <div className="what-sets-number">02</div>
+                  <div className="what-sets-content">
+                    <h3>Data-Driven Campaign Design</h3>
+                    <p>Our strategy teams leverage audits, interviews, and usage studies to shape campaigns that resonate with real customer behavior.</p>
+                  </div>
+                </div>
+
+                <div className="what-sets-item">
+                  <div className="what-sets-number">03</div>
+                  <div className="what-sets-content">
+                    <h3>End-to-End Control</h3>
+                    <p>We manage campaigns across the full lifecycle — from planning to staff training, field deployment, and real-time monitoring.</p>
+                  </div>
+                </div>
+
+                <div className="what-sets-item">
+                  <div className="what-sets-number">04</div>
+                  <div className="what-sets-content">
+                    <h3>Continuous Improvement (Kaizen Philosophy)</h3>
+                    <p>True to our name, we apply the PDCA (Plan–Do–Check–Act) loop to constantly optimize campaign performance on the go.</p>
+                  </div>
+                </div>
+
+                <div className="what-sets-item">
+                  <div className="what-sets-number">05</div>
+                  <div className="what-sets-content">
+                    <h3>Execution Expertise Across India</h3>
+                    <p>We've activated campaigns across metros, Tier 2/3 cities, and rural markets — with local teams and on-ground reliability.</p>
+                  </div>
+                </div>
+
+                <div className="what-sets-item">
+                  <div className="what-sets-number">06</div>
+                  <div className="what-sets-content">
+                    <h3>Experienced Leadership</h3>
+                    <p>Led by industry veterans from Nielsen, Fortis, and Dish TV — we bring decades of strategic and operational expertise to every campaign.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <ContactForm />
