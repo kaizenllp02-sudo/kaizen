@@ -7,9 +7,9 @@
     z-index: 1000;
     padding: 20px 10px;
     width: 60%;
-    background-color: black;
+    /* background-color: black; */
     backdrop-filter: blur(15px);
-    box-shadow: 0px 0px 10px rgba(227, 228, 237, 0.35);
+    /* box-shadow: 0px 0px 10px rgba(227, 228, 237, 0.35); */
     border: 2px solid rgba(255, 255, 255, 0.18);
     border-radius: 50px;
     margin: 20px auto;
