@@ -29,6 +29,10 @@ export default function StrategicPlanningBrand() {
     ];
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting && !isVisible) {
