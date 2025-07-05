@@ -37,7 +37,7 @@
 .error-content i,
 .not-found-content i {
   font-size: 4rem;
-  color: rgba(223, 160, 6, 0.6);
+  color: rgba(229, 62, 62, 0.6);
   margin-bottom: 30px;
 }
 
@@ -94,8 +94,8 @@ a.btn-primary,
   font-weight: 600;
   border: none;
   border-radius: 8px;
-  background-color: rgba(223, 160, 6, 0.9);
-  color: #000;
+  background-color: #e53e3e;
+  color: #fff;
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
@@ -103,10 +103,10 @@ a.btn-primary,
 
 a.btn-primary:hover,
 .btn-primary:hover {
-  background-color: rgba(223, 160, 6, 1);
+  background-color: #dc2626;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(223, 160, 6, 0.5);
-  color: #000;
+  box-shadow: 0 8px 24px rgba(229, 62, 62, 0.5);
+  color: #fff;
   text-decoration: none;
 }
 
@@ -122,7 +122,7 @@ a.btn-primary:hover,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: rgba(223, 160, 6, 0.9);
+  color: #e53e3e;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -134,7 +134,7 @@ a.btn-primary:hover,
 
 .back-link:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(223, 160, 6, 0.3);
+  border-color: rgba(229, 62, 62, 0.3);
   transform: translateY(-2px);
 }
 
@@ -216,8 +216,8 @@ a.btn-primary:hover,
 }
 
 .category-tag {
-  background: rgba(223, 160, 6, 0.1);
-  color: rgba(223, 160, 6, 0.9);
+  background: rgba(229, 62, 62, 0.1);
+  color: #e53e3e;
   padding: 6px 16px;
   border-radius: 16px;
   font-weight: 600;
@@ -257,7 +257,7 @@ a.btn-primary:hover,
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(223, 160, 6, 0.3);
+  border: 2px solid rgba(229, 62, 62, 0.3);
 }
 
 .author-info {
@@ -335,8 +335,8 @@ a.btn-primary:hover,
 .blog-post-blockquote {
   margin: 40px 0;
   padding: 25px 30px;
-  background: rgba(223, 160, 6, 0.05);
-  border-left: 4px solid rgba(223, 160, 6, 0.9);
+  background: rgba(229, 62, 62, 0.05);
+  border-left: 4px solid #e53e3e;
   border-radius: 8px;
   font-style: italic;
   color: #ffffff;
@@ -375,13 +375,13 @@ a.btn-primary:hover,
 }
 
 .blog-post-body a {
-  color: rgba(223, 160, 6, 0.9);
+  color: #e53e3e;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
 
 .blog-post-body a:hover {
-  color: rgba(255, 193, 7, 1);
+  color: #dc2626;
 }
 
 /* Blog Post Footer */
@@ -427,7 +427,7 @@ a.btn-primary:hover,
 
 .share-btn:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(223, 160, 6, 0.3);
+  border-color: rgba(229, 62, 62, 0.3);
   transform: translateY(-2px);
 }
 
@@ -452,7 +452,7 @@ a.btn-primary:hover,
   display: block;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(223, 160, 6, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(229, 62, 62, 0.3), transparent);
   margin-top: 80px;
 }
 

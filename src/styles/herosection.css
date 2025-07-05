@@ -40,23 +40,23 @@
   font-weight: 600;
   border: none;
   border-radius: 8px;
-  background-color: rgba(223, 160, 6, 0.9);
-  color: #000;
+  background-color: #e53e3e;
+  color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-cta:hover {
-  background-color: rgba(223, 160, 6, 1);
+  background-color: #dc2626;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(223, 160, 6, 0.5);
+  box-shadow: 0 8px 24px rgba(229, 62, 62, 0.5);
 }
 
 /* Scroll Down Arrow */
 .scroll-down-indicator {
   margin-top: 40px;
   font-size: 30px;
-  color: rgba(223, 160, 6, 0.8);
+  color: #e53e3e;
   animation: bounce 2s infinite;
 }
 

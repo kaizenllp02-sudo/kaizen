@@ -13,7 +13,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(223, 160, 6, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(229, 62, 62, 0.3), transparent);
 }
 
 .footer-menu-section::after {
@@ -23,7 +23,7 @@
     right: -10%;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(223, 160, 6, 0.03) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(229, 62, 62, 0.03) 0%, transparent 70%);
     border-radius: 50%;
 }
 
@@ -52,18 +52,18 @@
 .footer-menu-logo-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, rgba(223, 160, 6, 0.9), rgba(255, 193, 7, 0.8));
+    background: linear-gradient(135deg, #e53e3e, #dc2626);
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 25px rgba(223, 160, 6, 0.2);
+    box-shadow: 0 8px 25px rgba(229, 62, 62, 0.2);
     transition: all 0.3s ease;
 }
 
 .footer-menu-logo-icon:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 12px 35px rgba(223, 160, 6, 0.3);
+    box-shadow: 0 12px 35px rgba(229, 62, 62, 0.3);
 }
 
 .footer-menu-logo-icon i {
@@ -85,7 +85,7 @@
 
 .footer-menu-logo-text span {
     font-size: 14px;
-    color: rgba(223, 160, 6, 0.9);
+    color: #e53e3e;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -122,7 +122,7 @@
 
 .newsletter-form input:focus {
     outline: none;
-    border-color: rgba(223, 160, 6, 0.5);
+    border-color: rgba(229, 62, 62, 0.5);
     background: rgba(255, 255, 255, 0.08);
 }
 
@@ -133,10 +133,10 @@
 .newsletter-form button {
     width: 45px;
     height: 45px;
-    background: linear-gradient(135deg, rgba(223, 160, 6, 0.9), rgba(255, 193, 7, 0.8));
+    background: linear-gradient(135deg, #e53e3e, #dc2626);
     border: none;
     border-radius: 10px;
-    color: #0a0e1a;
+    color: #ffffff;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
@@ -146,7 +146,7 @@
 
 .newsletter-form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(223, 160, 6, 0.3);
+    box-shadow: 0 8px 25px rgba(229, 62, 62, 0.3);
 }
 
 .newsletter-form button i {
@@ -179,13 +179,13 @@
     left: 0;
     width: 80%;
     height: 2px;
-    background: rgba(223, 160, 6, 0.9);
+    background: #e53e3e;
     border-radius: 1px;
 }
 
 .footer-menu-nav-column h4 i {
     font-size: 16px;
-    color: rgba(223, 160, 6, 0.9);
+    color: #e53e3e;
 }
 
 /* Hide accordion icons on desktop */
@@ -226,7 +226,7 @@
     transform: translateY(-50%);
     width: 0;
     height: 2px;
-    background: rgba(223, 160, 6, 0.9);
+    background: #e53e3e;
     transition: width 0.3s ease;
     border-radius: 1px;
 }
@@ -274,14 +274,14 @@
 
 .footer-menu-contact-item:hover {
     background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(223, 160, 6, 0.2);
+    border-color: rgba(229, 62, 62, 0.2);
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .footer-menu-contact-item i {
     font-size: 20px;
-    color: rgba(223, 160, 6, 0.9);
+    color: #e53e3e;
     margin-top: 2px;
     min-width: 24px;
 }
@@ -311,7 +311,7 @@
 }
 
 .footer-menu-contact-item a:hover {
-    color: rgba(223, 160, 6, 0.9);
+    color: #e53e3e;
 }
 
 /* Responsive Design */
@@ -460,7 +460,7 @@
     }
 
     .footer-menu-nav-header:hover {
-        color: rgba(223, 160, 6, 0.9);
+        color: #e53e3e;
     }
 
     .footer-menu-nav-header::after {
@@ -470,7 +470,7 @@
     .footer-menu-accordion-icon {
         display: inline-block;
         font-size: 14px;
-        color: rgba(223, 160, 6, 0.9);
+        color: #e53e3e;
         transition: transform 0.3s ease;
         margin-left: auto;
     }
@@ -540,7 +540,7 @@
 
     .footer-menu-nav-column a:hover {
         padding-left: 15px;
-        color: rgba(223, 160, 6, 0.9);
+        color: #e53e3e;
     }
 
     .footer-menu-logo {
@@ -603,7 +603,7 @@
     .footer-menu-contact-item i {
         display: inline-block;
         font-size: 20px;
-        color: rgba(223, 160, 6, 0.9);
+        color: #e53e3e;
         min-width: 24px;
         flex-shrink: 0;
     }

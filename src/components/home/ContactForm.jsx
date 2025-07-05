@@ -36,13 +36,13 @@ export default function ContactForm() {
         borderColor: '#666',
       },
       '&.Mui-focused fieldset': {
-        borderColor: 'rgba(223, 160, 6, 0.9)',
+        borderColor: '#e53e3e',
       },
     },
     '& .MuiInputLabel-root': {
       color: 'rgba(245, 245, 245, 0.32)',
       '&.Mui-focused': {
-        color: 'rgba(223, 160, 6, 0.9)',
+        color: '#e53e3e',
       },
     },
     '& .MuiInputBase-input': {
@@ -52,11 +52,11 @@ export default function ContactForm() {
 
   // Custom styling for Buttons to match your theme
   const buttonStyle = {
-    backgroundColor: 'rgba(223, 160, 6, 0.9)',
-    color: '#000',
+    backgroundColor: '#e53e3e',
+    color: '#fff',
     fontWeight: 600,
     '&:hover': {
-      backgroundColor: 'rgba(223, 160, 6, 1)',
+      backgroundColor: '#dc2626',
       transform: 'translateY(-2px)',
     },
     transition: 'background-color 0.3s ease, transform 0.2s ease',

@@ -21,8 +21,8 @@
 .blog-preview-spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid rgba(223, 160, 6, 0.2);
-  border-top: 3px solid rgba(223, 160, 6, 0.9);
+  border: 3px solid rgba(229, 62, 62, 0.2);
+  border-top: 3px solid #e53e3e;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -84,8 +84,8 @@
 
 .blog-preview-see-all:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(223, 160, 6, 0.3);
-  color: rgba(223, 160, 6, 0.9);
+  border-color: rgba(229, 62, 62, 0.3);
+  color: #e53e3e;
   transform: translateY(-2px);
   gap: 12px;
 }
@@ -134,7 +134,7 @@
 .blog-preview-card:hover {
   transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(223, 160, 6, 0.2);
+  border-color: rgba(229, 62, 62, 0.2);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -181,12 +181,12 @@
 
 .blog-preview-card-meta time i {
   font-size: 10px;
-  color: rgba(223, 160, 6, 0.7);
+  color: #e53e3e;
 }
 
 .blog-preview-card-category {
-  background: rgba(223, 160, 6, 0.1);
-  color: rgba(223, 160, 6, 0.9);
+  background: rgba(229, 62, 62, 0.1);
+  color: #e53e3e;
   padding: 4px 8px;
   border-radius: 8px;
   font-weight: 600;
@@ -205,7 +205,7 @@
 }
 
 .blog-preview-card-link:hover .blog-preview-card-title {
-  color: rgba(223, 160, 6, 0.9);
+  color: #e53e3e;
 }
 
 .blog-preview-card-excerpt {
@@ -332,7 +332,7 @@
   .blog-preview-card-link:active .blog-preview-card {
     transform: translateY(-4px);
     background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(223, 160, 6, 0.2);
+    border-color: rgba(229, 62, 62, 0.2);
   }
   
   .blog-preview-see-all:hover {

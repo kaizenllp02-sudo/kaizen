@@ -75,7 +75,7 @@
 .testimonial-card:hover {
   transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(223, 160, 6, 0.3);
+  border-color: rgba(229, 62, 62, 0.3);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
@@ -86,7 +86,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, rgba(223, 160, 6, 1), rgba(255, 193, 7, 0.8));
+  background: linear-gradient(90deg, #e53e3e, #dc2626);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -118,7 +118,7 @@
 }
 
 .indicator.active {
-  background: linear-gradient(135deg, rgba(223, 160, 6, 1), rgba(255, 193, 7, 0.8));
+  background: linear-gradient(135deg, #e53e3e, #dc2626);
   transform: scale(1.2);
 }
 
@@ -419,6 +419,6 @@
   .testimonial-card:active {
     transform: translateY(-4px);
     background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(223, 160, 6, 0.3);
+    border-color: rgba(229, 62, 62, 0.3);
   }
 }
