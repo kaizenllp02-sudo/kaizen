@@ -13,18 +13,18 @@ export default function Footer() {
 
         {/* Right Side: Social Links */}
         <div className="footer-right">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Kaizen on Facebook">
+          <a href="https://www.facebook.com/profile.php?id=100067205184014" target="_blank" rel="noopener noreferrer" aria-label="Kaizen on Facebook">
             <i className="fab fa-facebook-f" aria-hidden="true"></i>
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Kaizen on Instagram">
+          {/* <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Kaizen on Instagram">
             <i className="fab fa-instagram" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Kaizen on LinkedIn">
+          </a> */}
+          <a href="https://www.linkedin.com/company/kaizen-events-promotion/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="Kaizen on LinkedIn">
             <i className="fab fa-linkedin-in" aria-hidden="true"></i>
           </a>
-          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Kaizen on Twitter">
+          {/* <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Kaizen on Twitter">
             <i className="fab fa-x-twitter" aria-hidden="true"></i>
-          </a>
+          </a> */}
         </div>
       </div>
     </footer>
