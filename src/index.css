@@ -6,14 +6,7 @@
 }
 
 /* Typography */
-@font-face {
-  font-family: 'Inter';
-  src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTcviYw.woff2') format('woff2');
-  font-display: swap;
-  ascent-override: 90%;
-  descent-override: 20%;
-  line-gap-override: 0%;
-}
+/* Removed manual @font-face for Inter to avoid 404 errors. Use Google Fonts link in index.html only. */
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
   /* background-color: #121212; */
