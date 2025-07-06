@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/home/Navbar';
 import AboutKaizen from '../components/home/AboutKaizen';
@@ -42,9 +43,20 @@ export default function About() {
   }, []);
   
   return (
-    <div className="about-page">
-      <Navbar />
-      <main className="about-main">
+    <>
+      <Helmet>
+        <title>About Us – Kaizen</title>
+        <meta name="description" content="Learn about Kaizen's mission, team, and unique approach to marketing. Meet our experts and discover what sets us apart in research-driven marketing." />
+        <meta property="og:title" content="About Us – Kaizen" />
+        <meta property="og:description" content="Learn about Kaizen's mission, team, and unique approach to marketing. Meet our experts and discover what sets us apart in research-driven marketing." />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://kaizzzen.vercel.app/about" />
+        <meta property="og:image" content="https://kaizzzen.vercel.app/og-image.jpg" />
+        <link rel="canonical" href="https://kaizzzen.vercel.app/about" />
+      </Helmet>
+      <div className="about-page">
+        <Navbar />
+        <main className="about-main">
         <section className="about-content">
           <div className="about-container">
             {/* Hero Section */}
@@ -241,5 +253,6 @@ export default function About() {
       <FooterMenu />
       <Footer />
     </div>
+    </>
   );
 }

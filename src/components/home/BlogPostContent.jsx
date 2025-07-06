@@ -1,41 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
-import { PortableText } from '@portabletext/react'
-import { client, POST_QUERY, urlFor } from '../../lib/sanity'
-import '../../styles/blogPost.css'
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { PortableText } from '@portabletext/react';
+import { urlFor } from '../../lib/sanity';
+import '../../styles/blogPost.css';
 
-const BlogPostContent = () => {
-  const { slug } = useParams()
-  const navigate = useNavigate()
-  const [post, setPost] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        setLoading(true)
-        setError(null)
-        const postData = await client.fetch(POST_QUERY, { slug })
-        
-        if (!postData) {
-          setError('Post not found')
-          return
-        }
-        
-        setPost(postData)
-      } catch (err) {
-        console.error('Error fetching blog post:', err)
-        setError('Failed to load post')
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    if (slug) {
-      fetchPost()
-    }
-  }, [slug])
+const BlogPostContent = ({ post, loading, error }) => {
+  const navigate = useNavigate();
 
   // Custom components for PortableText
   const portableTextComponents = {
@@ -82,6 +52,7 @@ const BlogPostContent = () => {
     },
   }
 
+
   if (loading) {
     return (
       <section className="blog-post-section">
@@ -90,7 +61,7 @@ const BlogPostContent = () => {
           <p>Loading article...</p>
         </div>
       </section>
-    )
+    );
   }
 
   if (error) {
@@ -112,7 +83,7 @@ const BlogPostContent = () => {
           </div>
         </div>
       </section>
-    )
+    );
   }
 
   if (!post) {
@@ -129,7 +100,7 @@ const BlogPostContent = () => {
           </div>
         </div>
       </section>
-    )
+    );
   }
 
   return (
