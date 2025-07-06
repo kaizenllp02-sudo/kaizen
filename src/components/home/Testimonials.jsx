@@ -13,49 +13,49 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
+      name: "FMCG Brand Manager",
       position: "Marketing Director",
       company: "TechFlow Solutions",
       image: "/api/placeholder/60/60",
       rating: 5,
-      content: "Kaizen transformed our brand presence completely. Their strategic approach and creative campaigns delivered exceptional results that exceeded our expectations."
+      content: "Kaizen is one of the few agencies that truly links insights to action."
     },
     {
       id: 2,
-      name: "Michael Chen",
+      name: "Healthcare Client",
       position: "CEO",
       company: "Innovation Labs",
       image: "/api/placeholder/60/60",
       rating: 5,
-      content: "Working with Kaizen was a game-changer. Their deep understanding of market dynamics and consumer behavior helped us achieve remarkable growth."
-    },
-    {
-      id: 3,
-      name: "Emma Rodriguez",
-      position: "Brand Manager",
-      company: "Global Retail Co",
-      image: "/api/placeholder/60/60",
-      rating: 5,
-      content: "The team at Kaizen brought fresh perspectives and innovative solutions. Their campaigns significantly boosted our brand engagement and sales."
-    },
-    {
-      id: 4,
-      name: "David Kumar",
-      position: "VP Marketing",
-      company: "StartUp Inc",
-      image: "/api/placeholder/60/60",
-      rating: 5,
-      content: "Outstanding results! Kaizen's creative team delivered campaigns that perfectly captured our brand essence and drove incredible engagement."
-    },
-    {
-      id: 5,
-      name: "Lisa Zhang",
-      position: "Creative Director",
-      company: "Design Studio",
-      image: "/api/placeholder/60/60",
-      rating: 5,
-      content: "Professional, innovative, and results-driven. Kaizen exceeded our expectations and delivered campaigns that truly resonated with our audience."
+      content: "Our campaign ROI tripled due to their hybrid offline + digital execution."
     }
+    // {
+    //   id: 3,
+    //   name: "Emma Rodriguez",
+    //   position: "Brand Manager",
+    //   company: "Global Retail Co",
+    //   image: "/api/placeholder/60/60",
+    //   rating: 5,
+    //   content: "The team at Kaizen brought fresh perspectives and innovative solutions. Their campaigns significantly boosted our brand engagement and sales."
+    // },
+    // {
+    //   id: 4,
+    //   name: "David Kumar",
+    //   position: "VP Marketing",
+    //   company: "StartUp Inc",
+    //   image: "/api/placeholder/60/60",
+    //   rating: 5,
+    //   content: "Outstanding results! Kaizen's creative team delivered campaigns that perfectly captured our brand essence and drove incredible engagement."
+    // },
+    // {
+    //   id: 5,
+    //   name: "Lisa Zhang",
+    //   position: "Creative Director",
+    //   company: "Design Studio",
+    //   image: "/api/placeholder/60/60",
+    //   rating: 5,
+    //   content: "Professional, innovative, and results-driven. Kaizen exceeded our expectations and delivered campaigns that truly resonated with our audience."
+    // }
   ]
 
   // Duplicate testimonials for infinite scroll
@@ -197,25 +197,15 @@ const Testimonials = () => {
           >
             {extendedTestimonials.map((testimonial, index) => (
               <div key={`${testimonial.id}-${Math.floor(index / testimonials.length)}`} className="testimonial-card">
-                <div className="testimonial-layout">
-                  <div className="testimonial-left">
-                    <div className="client-avatar">
-                      <img src={testimonial.image} alt={testimonial.name} />
-                    </div>
-                    <div className="client-details">
-                      <h4 className="client-name">{testimonial.name}</h4>
-                      <p className="client-position">{testimonial.position}</p>
-                      <p className="client-company">{testimonial.company}</p>
-                    </div>
+                <div className="testimonial-content-vertical">
+                  <div className="testimonial-text">
+                    <p>"{testimonial.content}"</p>
                   </div>
-                  
-                  <div className="testimonial-right">
-                    <div className="testimonial-text">
-                      <p>"{testimonial.content}"</p>
-                    </div>
-                    <div className="testimonial-rating">
-                      {renderStars(testimonial.rating)}
-                    </div>
+                  <div className="testimonial-client-name">
+                    <h4 className="client-name">{testimonial.name}</h4>
+                  </div>
+                  <div className="testimonial-rating">
+                    {renderStars(testimonial.rating)}
                   </div>
                 </div>
               </div>

@@ -1,3 +1,25 @@
+/* Vertical testimonial content layout */
+.testimonial-content-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.testimonial-client-name {
+  margin: 12px 0 0 0;
+  text-align: center;
+}
+
+.testimonial-client-name .client-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+}
 .testimonials-section {
   padding: 80px 0;
   background: transparent;
