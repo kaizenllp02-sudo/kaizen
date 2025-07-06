@@ -83,9 +83,12 @@ const BlogPreview = () => {
                 {post.mainImage && (
                   <div className="blog-preview-card-image">
                     <img
-                      src={urlFor(post.mainImage).width(400).height(250).url()}
+                      src={urlFor(post.mainImage).width(400).height(250).auto('format').url()}
                       alt={post.title}
+                      width="400"
+                      height="250"
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 )}

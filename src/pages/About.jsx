@@ -140,7 +140,15 @@ export default function About() {
 
                   {/* Main Team Image */}
                   <div className="main-team-image">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&h=400&fit=crop" alt="Team working together" />
+                    <img
+                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&h=400&fit=crop&auto=format"
+                      alt="Team working together"
+                      width="500"
+                      height="400"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ borderRadius: '12px', width: '100%', objectFit: 'cover' }}
+                    />
                   </div>
                 </div>
               </div>

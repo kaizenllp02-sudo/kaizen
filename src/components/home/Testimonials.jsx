@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import '../../styles/testimonials.css'
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(5) // Start from middle set
+  const [currentIndex, setCurrentIndex] = useState(2) // change this to number of testimonials are displaying
   const [isHovered, setIsHovered] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
   const [dragStart, setDragStart] = useState(0)

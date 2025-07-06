@@ -137,9 +137,12 @@ const BlogSection = () => {
                   {post.mainImage && (
                     <div className="blog-card-image">
                       <img
-                        src={urlFor(post.mainImage).width(600).height(300).url()}
+                        src={urlFor(post.mainImage).width(600).height(300).auto('format').url()}
                         alt={post.title}
+                        width="600"
+                        height="300"
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   )}

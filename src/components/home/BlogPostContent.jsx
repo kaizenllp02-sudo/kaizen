@@ -148,8 +148,12 @@ const BlogPostContent = () => {
           {post.mainImage && (
             <div className="blog-post-hero-image">
               <img
-                src={urlFor(post.mainImage).width(1200).height(600).url()}
+                src={urlFor(post.mainImage).width(1200).height(600).auto('format').url()}
                 alt={post.title}
+                width="1200"
+                height="600"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           )}
@@ -173,9 +177,13 @@ const BlogPostContent = () => {
                 <div className="blog-post-author">
                   {post.author.image && (
                     <img
-                      src={urlFor(post.author.image).width(40).height(40).url()}
+                      src={urlFor(post.author.image).width(40).height(40).auto('format').url()}
                       alt={post.author.name}
                       className="author-avatar"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      decoding="async"
                     />
                   )}
                   <div className="author-info">
