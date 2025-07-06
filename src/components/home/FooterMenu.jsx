@@ -103,6 +103,9 @@ export default function FooterMenu() {
                             <i className="fa-solid fa-paper-plane"></i>
                         </button>
                     </form>
+                    <p className="footer-menu-newsletter-desc">
+                        Stay updated on consumer trends, marketing tools, and research insights.
+                    </p>
                 </div>
 
                 {/* Navigation Links */}
@@ -175,22 +178,23 @@ export default function FooterMenu() {
                     <div className="footer-menu-contact-item">
                         <i className="fa-solid fa-location-dot"></i>
                         <div>
-                            <span className="contact-label">Mumbai HQ:</span>
-                            <span>L-355, Dreams Mall, Bhandup west, Mumbai 400078</span>
+                            <span className="contact-label">Head Office:</span>
+                            <span>F-220 First  Floor, The Dreams Mall, L.B.S.Marg, Bhandup (West), Mumbai – 400078</span>
                         </div>
                     </div>
                     <div className="footer-menu-contact-item">
-                        <i className="fa-solid fa-envelope"></i>
+                        <i className="fa-solid fa-headset"></i>
                         <div>
-                            <span className="contact-label">Email</span>
+                            <span className="contact-label">Contact</span>
                             <a href="mailto:pooja@kaizenevents&promotionllp.com">pooja@kaizenevents&promotionllp.com</a>
+                            <span style={{ display: 'block' }}>+91 9892787127</span>
                         </div>
                     </div>
                     <div className="footer-menu-contact-item">
-                        <i className="fa-solid fa-phone"></i>
+                        <i className="fa-solid fa-briefcase"></i>
                         <div>
-                            <span className="contact-label">Phone</span>
-                            <span>+91 9892787127</span>
+                            <span className="contact-label">Offices</span>
+                            <span>Delhi, Ahmedabad, Pune, Kolkata, Chennai, Bangalore, Hyderabad, Indore, Cochin, Kanpur, Lucknow</span>
                         </div>
                     </div>
                 </div>

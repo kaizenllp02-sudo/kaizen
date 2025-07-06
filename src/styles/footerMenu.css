@@ -154,6 +154,14 @@
     font-weight: 900;
 }
 
+.footer-menu-newsletter-desc {
+    padding-top: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #b8bcc8;
+    font-weight: 400;
+}
+
 /* Navigation Section */
 .footer-menu-nav {
     display: grid;
@@ -451,7 +459,7 @@
         transition: all 0.3s ease;
     }
 
-    .footer-menu-contact-section{
+    .footer-menu-contact-section {
         margin-top: 20px;
     }
 
