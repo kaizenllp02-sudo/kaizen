@@ -53,7 +53,9 @@ const CaseStudy = () => {
                             aria-label={`Read more about ${cs.title}`}
                             onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
                         >
-                            Read more
+                            {cs.title.includes('FMCG') && 'Read the FMCG Case Study'}
+                            {cs.title.includes('Haircare') && 'Read the Haircare Case Study'}
+                            {cs.title.includes('Healthcare') && 'Read the Healthcare Case Study'}
                         </Link>
                     </div>
                 ))}
