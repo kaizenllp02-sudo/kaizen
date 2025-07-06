@@ -126,6 +126,26 @@
     .integrated-marketing-why-text {
         font-size: 0.95rem;
     }
+
+    .deck-request-form {
+        flex-direction: column !important;
+        gap: 10px;
+        align-items: stretch;
+    }
+    .deck-request-input {
+        order: 1;
+        max-width: 100% !important;
+        width: 100%;
+        font-size: 15px;
+    }
+    .deck-request-btn {
+        order: 2;
+        min-width: 0;
+        width: 100%;
+        font-size: 16px;
+        height: 44px;
+        padding: 0;
+    }
 }
 
 
