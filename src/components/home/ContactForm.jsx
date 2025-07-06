@@ -68,11 +68,11 @@ export default function ContactForm() {
     try {
       // Google Apps Script Web App URL from environment variable
       const GOOGLE_SCRIPT_URL = env.GOOGLE_SCRIPT_URL;
-      
+
       if (!GOOGLE_SCRIPT_URL) {
         throw new Error('Google Apps Script URL not configured');
       }
-      
+
       // Create form data as URL parameters
       const params = new URLSearchParams();
       params.append('firstName', contactFormData.firstName);
@@ -202,13 +202,40 @@ export default function ContactForm() {
           <Button
             type="submit"
             variant="contained"
-            sx={buttonStyle}
+            sx={{
+              ...buttonStyle,
+              borderRadius: '8px',
+              padding: '10px 0',
+              width: '100%',
+              fontSize: '15px',
+              textTransform: 'uppercase',
+              boxShadow: '0 2px 8px rgba(229,62,62,0.12)'
+            }}
             aria-label="Send Message"
           >
             Send Message
           </Button>
+          <div style={{ textAlign: 'center', margin: '0.5rem 0 0 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, width: '100%' }}>
+            <span style={{ color: '#aaa', fontWeight: 500, fontSize: '15px', margin: 0 }}>OR</span>
+            <Button
+              component="a"
+              href="tel:+919892787127"
+              variant="contained"
+              sx={{
+                ...buttonStyle,
+                borderRadius: '8px',
+                padding: '10px 0',
+                width: '100%',
+                fontSize: '15px',
+                textTransform: 'uppercase',
+                boxShadow: '0 2px 8px rgba(229,62,62,0.12)'
+              }}
+              aria-label="Call Kaizen Marketing"
+            >
+              Call Us
+            </Button>
+          </div>
         </form>
-
       </div>
     </section>
   );
