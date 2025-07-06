@@ -110,7 +110,12 @@ export default function About() {
                       </>
                     ) : (
                       latestBlogs.map((blog, index) => (
-                        <Link key={blog._id} to={`/blog/${blog.slug.current}`} className="blog-card-link">
+                        <Link
+                          key={blog._id}
+                          to={`/blog/${blog.slug.current}`}
+                          className="blog-card-link"
+                          aria-label={`Read blog post: ${blog.title}`}
+                        >
                           <div className="blog-card">
                             <div className="blog-content">
                               <div className="blog-title-row">

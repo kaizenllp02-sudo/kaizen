@@ -99,8 +99,9 @@ const BlogSection = () => {
             <button
               className={selectedCategory === 'all' ? 'active' : ''}
               onClick={() => setSelectedCategory('all')}
+              aria-label="Show all blog categories"
             >
-              <i className="fas fa-th-large"></i>
+              <i className="fas fa-th-large" aria-hidden="true"></i>
               Explore All
             </button>
             {categories.map(category => (
@@ -108,6 +109,7 @@ const BlogSection = () => {
                 key={category._id}
                 className={selectedCategory === category._id ? 'active' : ''}
                 onClick={() => setSelectedCategory(category._id)}
+                aria-label={`Show category: ${category.title}`}
               >
                 {category.title}
               </button>
@@ -129,6 +131,7 @@ const BlogSection = () => {
                 key={post._id}
                 to={`/blog/${post.slug.current}`}
                 className="blog-card-link"
+                aria-label={`Read blog post: ${post.title}`}
               >
                 <article className="blog-card">
                   {post.mainImage && (
@@ -185,7 +188,7 @@ const BlogSection = () => {
 
                       <div className="blog-card-read-more">
                         Read More
-                        <i className="fas fa-arrow-right"></i>
+                        <i className="fas fa-arrow-right" aria-hidden="true"></i>
                       </div>
                     </div>
                   </div>

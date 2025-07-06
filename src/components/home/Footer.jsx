@@ -13,17 +13,17 @@ export default function Footer() {
 
         {/* Right Side: Social Links */}
         <div className="footer-right">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-facebook-f"></i>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Kaizen on Facebook">
+            <i className="fab fa-facebook-f" aria-hidden="true"></i>
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-instagram"></i>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Kaizen on Instagram">
+            <i className="fab fa-instagram" aria-hidden="true"></i>
           </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-linkedin-in"></i>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Kaizen on LinkedIn">
+            <i className="fab fa-linkedin-in" aria-hidden="true"></i>
           </a>
-          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-x-twitter"></i>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Kaizen on Twitter">
+            <i className="fab fa-x-twitter" aria-hidden="true"></i>
           </a>
         </div>
       </div>

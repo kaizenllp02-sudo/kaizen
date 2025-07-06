@@ -26,14 +26,14 @@ export default function Navbar() {
     <>
       <nav className={`kaizen-navbar ${isMenuOpen ? 'mobile-expanded' : ''}`}>
         <section className="kaizen-container">
-          <div className="kaizen-logo">
-            <i className="fa-solid fa-shop"></i>
-          </div>
+          <a href="/" className="kaizen-logo" aria-label="Kaizen Home">
+            <i className="fa-solid fa-shop" aria-hidden="true"></i>
+          </a>
 
           {/* Hamburger Icon */}
-          <div className="kaizen-hamburger" onClick={toggleMenu}>
-            <i className={`fa-solid ${isMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
-          </div>
+          <button className="kaizen-hamburger" onClick={toggleMenu} aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>
+            <i className={`fa-solid ${isMenuOpen ? 'fa-xmark' : 'fa-bars'}`} aria-hidden="true"></i>
+          </button>
 
           {/* Desktop Menu */}
           <ul className="kaizen-menu">
@@ -59,9 +59,9 @@ export default function Navbar() {
       {/* Fullscreen Mobile Menu */}
       {isMenuOpen && (
         <div className="kaizen-fullscreen-menu">
-          <div className="kaizen-close" onClick={toggleMenu}>
-            <i className="fa-solid fa-xmark"></i>
-          </div>
+          <button className="kaizen-close" onClick={toggleMenu} aria-label="Close menu">
+            <i className="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
           <ul className="kaizen-fullscreen-list">
             <li className="kaizen-menu-list">
               <a href="/" className="kaizen-menu-link" onClick={toggleMenu}>Home</a>

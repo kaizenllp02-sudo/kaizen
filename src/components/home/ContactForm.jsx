@@ -203,6 +203,7 @@ export default function ContactForm() {
             type="submit"
             variant="contained"
             sx={buttonStyle}
+            aria-label="Send Message"
           >
             Send Message
           </Button>

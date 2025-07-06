@@ -60,7 +60,7 @@ export default function AboutKaizen() {
             </div>
           </div>
         </div>
-        <button className="about-cta" onClick={() => window.location.href = "/about"}>
+        <button className="about-cta" onClick={() => window.location.href = "/about"} aria-label="Learn more about Kaizen">
           Learn More About Us
         </button>
       </div>

@@ -5,7 +5,6 @@ import AboutKaizen from '../components/home/AboutKaizen';
 import Turnover from '../components/home/Turnover';
 import IntegratedMarketing from '../components/home/IntegratedMarketing';
 import ServicesOffered from '../components/home/ServicesOffered';
-// import CTACard from '../components/home/CTACard';
 // import PastWorks from '../components/home/PastWorks';
 import Testimonials from '../components/home/Testimonials';
 import BlogPreview from '../components/home/BlogPreview';
@@ -24,7 +23,6 @@ export default function Home() {
       <Turnover />
       <IntegratedMarketing />
       <ServicesOffered />
-      {/* <CTACard /> */}
       {/* <PastWorks /> */}
       <Testimonials />
       <BlogPreview />

@@ -321,9 +321,9 @@ export default function StrategicPlanningBrand() {
                                     <span className="result-label">Months Timeline</span>
                                 </div>
                             </div>
-                            <button className="case-study-cta">
+                            <button className="case-study-cta" aria-label="View full case study">
                                 View Full Case Study
-                                <i className="fas fa-arrow-right"></i>
+                                <i className="fas fa-arrow-right" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div className="case-study-visual">

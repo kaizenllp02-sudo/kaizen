@@ -111,9 +111,9 @@ const ServicesOffered = () => {
           <h3>Looking to scale your marketing efforts<br />
             with research-backed campaigns?</h3>
           <p>Let’s make it happen — the Kaizen way.</p>
-          <button onClick={scrollToContact} className="services-cta-button">
+          <button onClick={scrollToContact} className="services-cta-button" aria-label="Get Started Today">
             Get Started Today
-            <i className="fas fa-arrow-right"></i>
+            <i className="fas fa-arrow-right" aria-hidden="true"></i>
           </button>
         </div>
       </div>

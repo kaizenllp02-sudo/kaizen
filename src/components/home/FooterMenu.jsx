@@ -99,8 +99,8 @@ export default function FooterMenu() {
                             onChange={handleNewsletterChange}
                             required
                         />
-                        <button type="submit">
-                            <i className="fa-solid fa-paper-plane"></i>
+                        <button type="submit" aria-label="Subscribe to newsletter">
+                            <i className="fa-solid fa-paper-plane" aria-hidden="true"></i>
                         </button>
                     </form>
                     <p className="footer-menu-newsletter-desc">

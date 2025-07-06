@@ -123,7 +123,7 @@ const BlogPostContent = () => {
             <i className="fas fa-file-alt"></i>
             <h2>Article Not Found</h2>
             <p>The article you're looking for doesn't exist.</p>
-            <Link to="/blog" className="btn-primary">
+            <Link to="/blog" className="btn-primary" aria-label="Back to all blog posts">
               Back
             </Link>
           </div>
@@ -137,8 +137,8 @@ const BlogPostContent = () => {
       <article className="blog-post">
         {/* Back Navigation */}
         <div className="blog-post-nav">
-          <Link to="/blog" className="back-link">
-            <i className="fas fa-arrow-left"></i>
+          <Link to="/blog" className="back-link" aria-label="Back to all blog posts">
+            <i className="fas fa-arrow-left" aria-hidden="true"></i>
             Back
           </Link>
         </div>
@@ -261,7 +261,7 @@ const BlogPostContent = () => {
           </div>
           
           <div className="blog-post-navigation">
-            <Link to="/blog" className="btn-primary">
+            <Link to="/blog" className="btn-primary" aria-label="View all blog articles">
               View All Articles
             </Link>
           </div>
