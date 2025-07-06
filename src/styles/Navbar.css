@@ -111,24 +111,26 @@
 }
 
 /* ===== Mobile Styles ===== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .kaizen-navbar {
         width: 100%;
         top: 0px;
         margin: 0;
-        padding: 20px;
+        padding: 16px 8px;
         border-radius: 0;
-        background-color: transparent;
-        box-shadow: none;
+        background: rgba(0,0,0,0.85);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         border: none;
+        transition: background 0.3s;
     }
 
     .kaizen-container {
-        padding: 0 25px;
+        padding: 0 10px;
     }
 
     .kaizen-logo i {
-        font-size: 25px;
+        font-size: 28px;
+        padding: 6px 0;
     }
 
     .kaizen-menu {
@@ -137,6 +139,13 @@
 
     .kaizen-hamburger {
         display: block;
+        font-size: 28px;
+        background: none;
+        border: none;
+        padding: 8px 12px;
+        margin-left: 8px;
+        color: #f2f2f2;
+        z-index: 1001;
     }
 
     .kaizen-menu-list {
@@ -144,6 +153,29 @@
     }
 
     .kaizen-menu-link {
-        font-size: 14px;
+        font-size: 16px;
+    }
+}
+
+/* Fullscreen menu improvements for mobile */
+@media (max-width: 900px) {
+    .kaizen-fullscreen-menu {
+        background: rgba(0,0,0,0.97);
+        transition: opacity 0.3s;
+        overflow-y: auto;
+        min-height: 100vh;
+        min-width: 100vw;
+        padding-top: 60px;
+    }
+    .kaizen-close {
+        top: 18px;
+        right: 18px;
+        font-size: 32px;
+        z-index: 1002;
+    }
+    .kaizen-fullscreen-list a {
+        font-size: 22px;
+        padding: 12px 0;
+        display: inline-block;
     }
 }

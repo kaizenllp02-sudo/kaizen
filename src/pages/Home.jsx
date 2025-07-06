@@ -3,6 +3,7 @@ import HeroSection from '../components/home/HeroSection.jsx';
 // import CompaniesWorkedWith from '../components/home/CompaniesWorkedWith';
 import AboutKaizen from '../components/home/AboutKaizen';
 import Turnover from '../components/home/Turnover';
+import CaseStudy from '../components/home/CaseStudy';
 import IntegratedMarketing from '../components/home/IntegratedMarketing';
 import ServicesOffered from '../components/home/ServicesOffered';
 // import PastWorks from '../components/home/PastWorks';
@@ -34,6 +35,7 @@ export default function Home() {
       <Turnover />
       <IntegratedMarketing />
       <ServicesOffered />
+      <CaseStudy />
       {/* <PastWorks /> */}
       <Testimonials />
       <BlogPreview />
