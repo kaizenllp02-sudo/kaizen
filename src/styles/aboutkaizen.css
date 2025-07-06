@@ -213,6 +213,7 @@
     .about-kaizen {
         margin: 30px 20px;
         padding: 25px 18px;
+        margin-top: 140px;
         width: calc(100% - 40px);
     }
 
@@ -324,7 +325,7 @@
     .about-kaizen {
         padding: 15px 10px;
         margin: 12px 8px;
-        margin-top: 130px;
+        margin-top: 200px;
         border-radius: 12px;
         width: calc(100% - 16px);
     }
@@ -375,7 +376,7 @@
     .about-kaizen {
         padding: 12px 8px;
         margin: 10px 5px;
-        margin-top: 200px;
+        margin-top: 285px;
         border-radius: 10px;
         width: calc(100% - 10px);
     }

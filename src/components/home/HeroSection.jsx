@@ -11,7 +11,7 @@ export default function HeroSection() {
           Integrated marketing solutions that move people—and numbers.
         </h1>
         <p className="hero-subtitle">
-          From doorsteps to digital screens, Kaizen delivers seamless online + offline brand activations that generate up to 3X higher ROI compared to traditional campaigns.
+          From doorsteps to digital screens, Kaizen delivers seamless online + offline brand activations that generate up to <span style={{ fontWeight: 'bold', color: '#e53e3e' }}>3X higher ROI</span> compared to traditional campaigns.
           We turn research into action and consumer attention into real results.
         </p>
         <button className="hero-cta" aria-label="Get in touch with Kaizen">Get in Touch</button>
