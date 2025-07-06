@@ -7,10 +7,9 @@ export default function AboutKaizen() {
       <div className="about-container">
         <h2 className="about-heading">Who We Are</h2>
         <p className="about-description">
-          Kaizen is a research-driven marketing agency that blends strategy, creativity, and flawless execution.  
-We specialize in turning customer insights into campaigns that drive awareness, trial, and loyalty.
+          Kaizen is a research and marketing company inspired by the Japanese philosophy of continuous improvement. Our mission is to deliver better solutions every day for every client, driven by a deep understanding of consumers and real-time execution.
         </p>
-        
+
         <div className="about-keywords">
           {[
             { text: "Strategic Planning Brand", color: "#81c784" },
@@ -35,7 +34,32 @@ We specialize in turning customer insights into campaigns that drive awareness, 
             </span>
           ))}
         </div>
-        
+
+        <div className="about-leadership">
+          <h3 className="about-leadership-heading">Leadership Team</h3>
+          <div className="about-leadership-list">
+            <div className="about-leader">
+              <div className="about-leader-name">Kamlesh Shukla</div>
+              <div className="about-leader-role">Founder &amp; Managing Director</div>
+              <div className="about-leader-desc">Ex-Nielsen, 30+ yrs in Market Research &amp; Promotions</div>
+            </div>
+            <div className="about-leader">
+              <div className="about-leader-name">Suneeta Bhagatjee</div>
+              <div className="about-leader-role">Executive Director</div>
+              <div className="about-leader-desc">Ex-BPL, Essel Group, Gitanjali Gems</div>
+            </div>
+            <div className="about-leader">
+              <div className="about-leader-name">Shyam Karmakar</div>
+              <div className="about-leader-role">Executive Director</div>
+              <div className="about-leader-desc">Ex-MarketRx, Nielsen, Fortis; MR &amp; Social Sector Specialist</div>
+            </div>
+            <div className="about-leader">
+              <div className="about-leader-name">Pooja Shukla</div>
+              <div className="about-leader-role">Interim CEO, Research Expert</div>
+              <div className="about-leader-desc">17+ Years of experience</div>
+            </div>
+          </div>
+        </div>
         <button className="about-cta" onClick={() => window.location.href = "/about"}>
           Learn More About Us
         </button>

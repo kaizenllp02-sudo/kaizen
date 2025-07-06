@@ -7,18 +7,18 @@ export default function HeroSection() {
     <section className="kaizen-hero">
       <div className="hero-content">
         <h1 className="hero-title">
-          Marketing That Never Stops Improving<br />
-          Innovative Strategies. Real Results.
+          Where Insight Meets Impact.<br />
+          Integrated marketing solutions that move people—and numbers.
         </h1>
         <p className="hero-subtitle">
-          At Kaizen, we believe there’s always a better way to engage your audience<br />
-          — with research-led, customer-first marketing. 
+          From doorsteps to digital screens, Kaizen delivers seamless online + offline brand activations that generate up to 3X higher ROI compared to traditional campaigns.
+          We turn research into action and consumer attention into real results.
         </p>
         <button className="hero-cta">Get in Touch</button>
 
-        <div className="scroll-down-indicator">
+        {/* <div className="scroll-down-indicator">
           <i className="fa-solid fa-angle-down"></i>
-        </div>
+        </div> */}
 
         <div className="logo-carousel">
           <div className="logo-track">
@@ -32,7 +32,7 @@ export default function HeroSection() {
             <img src="/logos/garnier.jpg" alt="Garnier" />
             <img src="/logos/chateau.png" alt="Chateau Indage" />
             <img src="/logos/apb.png" alt="Asia Pacific Breweries Singapore" />
-            
+
             <img src="/logos/britannia.png" alt="Britannia" />
             <img src="/logos/lorealparis.jpg" alt="L’Oréal Paris" />
             <img src="/logos/unilever.png" alt="Unilever" />
