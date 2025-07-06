@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import '../../styles/Navbar.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -16,11 +18,38 @@ export default function Navbar() {
         block: 'start'
       });
     }
-    // Close mobile menu if open
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
+    if (isMenuOpen) setIsMenuOpen(false);
+  };
+
+  const scrollToServices = (e) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      // Use sessionStorage to signal scroll after navigation
+      sessionStorage.setItem('scrollToServices', 'true');
+      window.location.href = '/'; // Navigate to home WITHOUT hash
+      return;
+    }
+    scrollToServicesSection();
+    if (isMenuOpen) setIsMenuOpen(false);
+  };
+
+  // Helper to scroll to services section
+  const scrollToServicesSection = () => {
+    const el = document.querySelector('.services-offered, #services, [class*="services"]');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  // On mount, check if we need to scroll to services (after navigation)
+  React.useEffect(() => {
+    if (location.pathname === '/' && sessionStorage.getItem('scrollToServices')) {
+      setTimeout(() => {
+        scrollToServicesSection();
+        sessionStorage.removeItem('scrollToServices');
+      }, 200);
+    }
+  }, [location]);
 
   return (
     <>
@@ -39,6 +68,9 @@ export default function Navbar() {
           <ul className="kaizen-menu">
             <li className="kaizen-menu-list">
               <a href="/" className="kaizen-menu-link">Home</a>
+            </li>
+            <li className="kaizen-menu-list">
+              <a href="#services" className="kaizen-menu-link" onClick={scrollToServices}>Services</a>
             </li>
             <li className="kaizen-menu-list">
               <a href="/about" className="kaizen-menu-link">About</a>
@@ -65,6 +97,9 @@ export default function Navbar() {
           <ul className="kaizen-fullscreen-list">
             <li className="kaizen-menu-list">
               <a href="/" className="kaizen-menu-link" onClick={toggleMenu}>Home</a>
+            </li>
+            <li className="kaizen-menu-list">
+              <a href="#services" className="kaizen-menu-link" onClick={scrollToServices}>Services</a>
             </li>
             <li className="kaizen-menu-list">
               <a href="/about" className="kaizen-menu-link" onClick={toggleMenu}>About</a>
