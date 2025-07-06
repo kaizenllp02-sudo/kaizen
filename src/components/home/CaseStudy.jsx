@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/casestudy.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -51,6 +51,7 @@ const CaseStudy = () => {
                             className="service-readmore-btn"
                             tabIndex={0}
                             aria-label={`Read more about ${cs.title}`}
+                            onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
                         >
                             Read more
                         </Link>

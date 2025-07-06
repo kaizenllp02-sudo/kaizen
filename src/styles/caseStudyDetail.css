@@ -1,0 +1,104 @@
+.csd-section {
+    margin-bottom: 2.5rem;
+    padding: 10px 20px;
+}
+
+.csd-header-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.2rem;
+}
+
+.csd-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+    .csd-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+    }
+
+    .csd-title {
+        font-size: 1.8rem;
+    }
+}
+
+.csd-h2-icon {
+    margin-right: 0.5em;
+    color: #e53e3e;
+    font-size: 1.1em;
+    vertical-align: -0.1em;
+}
+
+.csd-section-desc {
+    font-size: 1.08rem;
+    color: #b8bcc8;
+    margin-bottom: 0.7rem;
+    line-height: 1.7;
+}
+
+.csd-section-desc strong {
+    color: #e53e3e;
+    font-weight: 700;
+}
+
+.csd-bullets {
+    margin: 0 0 0.7rem 0;
+    padding-left: 1.2em;
+    color: #e4e7eb;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.csd-bullets li {
+    margin-bottom: 0.5em;
+}
+
+.csd-bullets strong {
+    color: #e53e3e;
+    font-weight: 700;
+}
+
+.case-study-back-nav {
+    padding: 30px 20px;
+    padding-left: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 0;
+}
+
+.case-study-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #e53e3e;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 0;
+    transform: none;
+}
+
+.case-study-back-btn:hover,
+.case-study-back-btn:focus {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.case-study-back-btn i {
+    font-size: 14px;
+}
