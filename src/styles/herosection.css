@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 .kaizen-hero {
-  height: 80vh;
+  /* height: 80vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +84,7 @@
 @media (max-width: 600px) {
   .hero-title {
     font-size: 32px;
-    margin-top: 245px;
+    /* margin-top: 245px; */
   }
 
   .hero-subtitle {
@@ -109,11 +109,20 @@
   margin-top: 40px;
 }
 
+
 .logo-track {
   display: flex;
   width: calc(200px * 10);
-  animation: scrollLogos 25s linear infinite;
   gap: 60px;
+  animation: scrollLogos 25s linear infinite;
+}
+
+.logo-track.rtl {
+  animation: scrollLogos 25s linear infinite;
+}
+
+.logo-track.ltr {
+  animation: scrollLogosReverse 25s linear infinite;
 }
 
 .logo-track img {
@@ -128,24 +137,35 @@
   opacity: 1;
 }
 
+
 @keyframes scrollLogos {
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(-50%);
   }
 }
 
+@keyframes scrollLogosReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 /* Optional: Responsive Tweaks */
 @media (max-width: 600px) {
+  .logo-carousel {
+    margin-top: 5px;
+  }
   .logo-track {
     gap: 40px;
     animation-duration: 20s;
-    margin-top: 80px;
+    margin-top: 40px;
   }
-
   .logo-track img {
     height: 40px;
   }
