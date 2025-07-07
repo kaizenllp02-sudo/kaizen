@@ -1,4 +1,5 @@
 import Navbar from '../components/home/Navbar.jsx';
+import CookieConsent from '../components/CookieConsent.jsx';
 import HeroSection from '../components/home/HeroSection.jsx';
 // import CompaniesWorkedWith from '../components/home/CompaniesWorkedWith';
 import AboutKaizen from '../components/home/AboutKaizen';
@@ -45,6 +46,7 @@ export default function Home() {
       <FAQ />
       <FooterMenu />
       <Footer />
+      <CookieConsent />
     </>
   );
 }
