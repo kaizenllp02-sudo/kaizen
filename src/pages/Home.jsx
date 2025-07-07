@@ -1,4 +1,5 @@
 import Navbar from '../components/home/Navbar.jsx';
+import { BackgroundBeamsDemo } from '../components/ui/background-beams-demo';
 import CookieConsent from '../components/CookieConsent.jsx';
 import HeroSection from '../components/home/HeroSection.jsx';
 // import CompaniesWorkedWith from '../components/home/CompaniesWorkedWith';
@@ -30,6 +31,7 @@ export default function Home() {
         <meta property="og:image" content="https://kaizzzen.vercel.app/og-image.jpg" />
         <link rel="canonical" href="https://kaizzzen.vercel.app/" />
       </Helmet>
+      <BackgroundBeamsDemo />
       <Navbar />
       <HeroSection />
       {/* <CompaniesWorkedWith /> */}

@@ -1,3 +1,4 @@
+@import "./styles/tailwind.css";
 /* Reset */
 * {
   margin: 0;
@@ -36,4 +37,4 @@ section {
   padding-top: 0;
   max-width: 1200px;
   margin: auto;
-} 
+}
