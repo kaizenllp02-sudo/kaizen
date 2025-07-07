@@ -41,7 +41,7 @@ export default function AboutKaizen() {
             <div className="about-leader">
               <div className="about-leader-name">Kamlesh Shukla</div>
               <div className="about-leader-role">Founder &amp; Managing Director</div>
-              <div className="about-leader-desc">Ex-Nielsen, 30+ yrs in Market Research &amp; Promotions</div>
+              <div className="about-leader-desc">Ex-Nielsen, 40+ yrs in Market Research &amp; Promotions</div>
             </div>
             <div className="about-leader">
               <div className="about-leader-name">Suneeta Bhagatjee</div>
