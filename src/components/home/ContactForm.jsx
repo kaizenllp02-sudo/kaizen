@@ -217,23 +217,54 @@ export default function ContactForm() {
           </Button>
           <div style={{ textAlign: 'center', margin: '0.5rem 0 0 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, width: '100%' }}>
             <span style={{ color: '#aaa', fontWeight: 500, fontSize: '15px', margin: 0 }}>OR</span>
-            <Button
-              component="a"
-              href="tel:+919892787127"
-              variant="contained"
-              sx={{
-                ...buttonStyle,
-                borderRadius: '8px',
-                padding: '10px 0',
-                width: '100%',
-                fontSize: '15px',
-                textTransform: 'uppercase',
-                boxShadow: '0 2px 8px rgba(229,62,62,0.12)'
-              }}
-              aria-label="Call Kaizen Marketing"
-            >
-              Call Us
-            </Button>
+            <div style={{ display: 'flex', gap: 12, width: '100%' }}>
+              <Button
+                component="a"
+                href="tel:+919892787127"
+                variant="contained"
+                sx={{
+                  ...buttonStyle,
+                  backgroundColor: '#0000FF',
+                  '&:hover': {
+                    backgroundColor: '#0000cc',
+                    transform: 'translateY(-2px)'
+                  },
+                  borderRadius: '8px',
+                  padding: '10px 0',
+                  width: '100%',
+                  fontSize: '15px',
+                  textTransform: 'uppercase',
+                  boxShadow: '0 2px 8px rgba(0,0,255,0.12)'
+                }}
+                aria-label="Call Kaizen Marketing"
+              >
+                Call Us
+              </Button>
+              <Button
+                component="a"
+                href="https://wa.me/919892787127"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="contained"
+                sx={{
+                  ...buttonStyle,
+                  backgroundColor: '#25D366',
+                  '&:hover': {
+                    backgroundColor: '#1ebe5d',
+                    transform: 'translateY(-2px)'
+                  },
+                  borderRadius: '8px',
+                  padding: '10px 0',
+                  width: '100%',
+                  fontSize: '15px',
+                  textTransform: 'uppercase',
+                  boxShadow: '0 2px 8px rgba(37,211,102,0.12)'
+                }}
+                aria-label="WhatsApp Kaizen Marketing"
+              >
+                WhatsApp Us
+              </Button>
+            </div>
           </div>
         </form>
       </div>
