@@ -108,10 +108,18 @@ const ServicesOffered = () => {
         {/* Services Grid */}
         <div className="services-grid">
           {services.map((service, index) => {
+            const isActive =
+              (service.slug === 'strategic-brand-planning' && showDetails.sbp) ||
+              (service.slug === 'brand-activation' && showDetails.ba) ||
+              (service.slug === 'promotions-visibility' && showDetails.pv) ||
+              (service.slug === 'market-research' && showDetails.mr) ||
+              (service.slug === 'event-marketing' && showDetails.em) ||
+              (service.slug === 'btl-execution-field-management' && showDetails.btl) ||
+              (service.slug === 'digital-marketing-support' && showDetails.dms);
             return (
               <div
                 key={index}
-                className="service-card"
+                className={`service-card${isActive ? ' active' : ''}`}
                 style={{
                   '--service-color': service.color,
                   '--service-color-light': service.color + '20',

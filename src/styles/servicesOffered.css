@@ -92,6 +92,31 @@
         0 0 0 1px var(--service-color);
 }
 
+.service-card.active {
+    transform: translateY(-8px);
+    background: var(--service-color-light);
+    border-color: var(--service-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15),
+        0 0 0 1px var(--service-color);
+}
+
+.service-card.active::before {
+    transform: scaleX(1);
+}
+
+.service-card.active .service-icon {
+    background: var(--service-color);
+    transform: scale(1.1);
+}
+
+.service-card.active .service-icon i {
+    color: #ffffff;
+}
+
+.service-card.active .service-title {
+    color: var(--service-color);
+}
+
 .service-card:hover::before {
     transform: scaleX(1);
 }
@@ -196,21 +221,21 @@
 }
 
 .services-cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 32px;
-  background: linear-gradient(135deg, #e53e3e, #dc2626);
-  border: none;
-  border-radius: 12px;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(229, 62, 62, 0.3);
-  cursor: pointer;
-  font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #e53e3e, #dc2626);
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(229, 62, 62, 0.3);
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .services-cta-button:hover {
@@ -223,7 +248,7 @@
 }
 
 .services-cta-button i {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 /* Responsive Design */
