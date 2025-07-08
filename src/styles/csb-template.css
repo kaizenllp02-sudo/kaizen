@@ -1,0 +1,217 @@
+body,
+.csb-template-main {
+    /* background: #000; */
+    color: #fff;
+}
+
+.csd-template-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.2rem;
+}
+
+.csd-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #e53e3e;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 0;
+    transform: none;
+}
+
+.csd-back-btn:hover,
+.csd-back-btn:focus {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.csd-back-btn i {
+    font-size: 14px;
+}
+
+.csb-template-main {
+    min-height: 100vh;
+    width: 100vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    padding: 0;
+}
+
+.csb-template-content {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    gap: 0;
+    padding: 48px 0 32px 0;
+    /* background: rgba(255,255,255,0.10); */
+    border-radius: 24px;
+    /* box-shadow: 0 8px 40px 0 rgba(0,0,0,0.18); */
+    backdrop-filter: blur(16px);
+    /* border: 1.5px solid rgba(255,255,255,0.18); */
+    margin: 0 auto;
+}
+
+.csb-template-left {
+    width: 50%;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+    padding: 0 32px 0 32px;
+}
+
+.csb-template-left h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.15;
+}
+
+.csb-template-left h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 18px 0 6px 0;
+    letter-spacing: -0.5px;
+}
+
+.csb-template-excerpt {
+    font-size: 1.15rem;
+    opacity: 0.85;
+    margin-bottom: 0;
+}
+
+.csb-template-left p {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    margin: 0;
+    text-align: justify;
+}
+
+.csb-template-right {
+    width: 50%;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    min-width: 0;
+    align-items: flex-end;
+    padding: 0 32px 0 0;
+}
+
+.csb-template-image-block {
+    margin: 0;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.csb-template-image {
+    width: 100%;
+    min-height: 260px;
+    min-width: 320px;
+    max-width: 480px;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.25);
+    object-fit: cover;
+}
+
+.csb-template-caption {
+    font-size: 1rem;
+    color: #bbb;
+    margin-top: 10px;
+    text-align: right;
+    max-width: 480px;
+}
+
+@media (max-width: 1100px) {
+    .csb-template-content {
+        width: 98%;
+        padding: 32px 0 24px 0;
+    }
+
+    .csb-template-left,
+    .csb-template-right {
+        padding: 0 12px;
+    }
+}
+
+@media (max-width: 900px) {
+    .csb-template-content {
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+        padding: 18px 0 12px 0;
+    }
+
+    .csb-template-left,
+    .csb-template-right {
+        width: 100%;
+        flex: 1 1 100%;
+        min-width: 0;
+        padding: 0 15px;
+    }
+
+    .csb-template-right {
+        align-items: flex-start;
+    }
+
+    .csb-template-image-block {
+        max-width: 100%;
+        align-items: flex-start;
+    }
+
+    .csb-template-image {
+        min-width: 0;
+        max-width: 100%;
+        min-height: 180px;
+    }
+
+    .csb-template-caption {
+        max-width: 100%;
+        text-align: left;
+    }
+}
+
+@media (max-width: 600px) {
+    .csb-template-main {
+        padding: 0;
+    }
+
+    .csb-template-content {
+        border-radius: 0;
+        box-shadow: none;
+        padding: 8px 0 4px 0;
+    }
+
+    .csb-template-left h1 {
+        font-size: 1.5rem;
+    }
+
+    .csb-template-left h2 {
+        font-size: 1.25rem;
+    }
+
+    .csb-template-image {
+        border-radius: 8px;
+        min-height: 120px;
+    }
+
+    .csb-template-caption {
+        font-size: 0.95rem;
+    }
+}

@@ -8,6 +8,7 @@ import CaseStudyFMCG from './pages/CaseStudyFMCG';
 import CaseStudyHaircare from './pages/CaseStudyHaircare';
 import CaseStudyHealthcare from './pages/CaseStudyHealthcare';
 import { BackgroundBeams } from "./components/ui/background-beams";
+import CsbTemplate from './pages/CsbTemplate';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/case-study/fmcg" element={<CaseStudyFMCG />} />
           <Route path="/case-study/haircare" element={<CaseStudyHaircare />} />
           <Route path="/case-study/healthcare" element={<CaseStudyHealthcare />} />
+          <Route path="/case-study/csb" element={<CsbTemplate />} />
         </Routes>
       </Router>
     </>
