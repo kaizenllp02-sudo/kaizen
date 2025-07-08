@@ -12,7 +12,7 @@ export default function AboutKaizen() {
           Kaizen is a research and marketing company inspired by the Japanese philosophy of continuous improvement. Our mission is to deliver better solutions every day for every client, driven by a deep understanding of consumers and real-time execution.
         </p>
 
-        <div className="about-keywords">
+        {/* <div className="about-keywords">
           {[
             { text: "Strategic Planning Brand", color: "#81c784" },
             { text: "Mall Promotion", color: "#64b5f6" },
@@ -35,7 +35,7 @@ export default function AboutKaizen() {
               {item.text}
             </span>
           ))}
-        </div>
+        </div> */}
 
         <div className="about-leadership">
           <h3 className="about-leadership-heading">Leadership Team</h3>
