@@ -19,22 +19,22 @@ const EMAIL_TO = 'example@email.com'; // Your email address
 function doGet(e) {
   try {
     const formData = e.parameter;
-    
-    // Open the Google Sheet
     const sheet = SpreadsheetApp.openById(SHEET_ID);
-    
+
     if (formData.type === 'newsletter') {
-      // Handle newsletter subscription
       handleNewsletterSubscription(sheet, formData);
+    } else if (formData.type === 'deck-request') {
+      handleDeckRequest(sheet, formData);
+    } else if (formData.type === 'case-study-viewer') {
+      handleCaseStudyViewer(sheet, formData);
     } else {
-      // Handle contact form submission
       handleContactFormSubmission(sheet, formData);
     }
-    
+
     return ContentService
       .createTextOutput(JSON.stringify({ success: true }))
       .setMimeType(ContentService.MimeType.JSON);
-      
+
   } catch (error) {
     console.error('Error in doGet:', error);
     return ContentService
@@ -46,28 +46,57 @@ function doGet(e) {
 function doPost(e) {
   try {
     const formData = e.parameter;
-    
+
     // Open the Google Sheet
     const sheet = SpreadsheetApp.openById(SHEET_ID);
-    
+
     if (formData.type === 'newsletter') {
-      // Handle newsletter subscription
       handleNewsletterSubscription(sheet, formData);
+    } else if (formData.type === 'case-study-viewer') {
+      handleCaseStudyViewer(sheet, formData);
     } else {
-      // Handle contact form submission
       handleContactFormSubmission(sheet, formData);
     }
-    
+
     return ContentService
       .createTextOutput(JSON.stringify({ success: true }))
       .setMimeType(ContentService.MimeType.JSON);
-      
+
   } catch (error) {
     console.error('Error:', error);
     return ContentService
       .createTextOutput(JSON.stringify({ success: false, error: error.toString() }))
       .setMimeType(ContentService.MimeType.JSON);
   }
+}
+
+function handleCaseStudyViewer(sheet, formData) {
+  // Get or create "Case Study Viewers" sheet
+  let viewerSheet = sheet.getSheetByName('Case Study Viewers');
+  if (!viewerSheet) {
+    viewerSheet = sheet.insertSheet('Case Study Viewers');
+    // Add headers
+    viewerSheet.getRange(1, 1, 1, 2).setValues([
+      ['Timestamp', 'Email']
+    ]);
+    // Format headers
+    viewerSheet.getRange(1, 1, 1, 2).setBackground('#e53e3e').setFontColor('white').setFontWeight('bold');
+  }
+  viewerSheet.appendRow([
+    formData.timestamp || new Date().toISOString(),
+    formData.email
+  ]);
+}
+
+function handleDeckRequest(sheet, formData) {
+  // Get or create the 'Deck Request' sub sheet
+  let deckSheet = sheet.getSheetByName('Deck Request');
+  if (!deckSheet) {
+    deckSheet = sheet.insertSheet('Deck Request');
+    deckSheet.appendRow(['Timestamp', 'Email']);
+    deckSheet.getRange(1, 1, 1, 2).setBackground('#4285f4').setFontColor('white').setFontWeight('bold');
+  }
+  deckSheet.appendRow([formData.timestamp || new Date().toISOString(), formData.email]);
 }
 
 function handleContactFormSubmission(sheet, formData) {
@@ -82,7 +111,7 @@ function handleContactFormSubmission(sheet, formData) {
     // Format headers
     contactSheet.getRange(1, 1, 1, 7).setBackground('#4285f4').setFontColor('white').setFontWeight('bold');
   }
-  
+
   // Add the new submission
   const newRow = [
     new Date(formData.timestamp),
@@ -93,9 +122,9 @@ function handleContactFormSubmission(sheet, formData) {
     formData.message,
     'New'
   ];
-  
+
   contactSheet.appendRow(newRow);
-  
+
   // Send email notification
   try {
     sendContactFormEmail(formData);
@@ -116,11 +145,11 @@ function handleNewsletterSubscription(sheet, formData) {
     // Format headers
     newsletterSheet.getRange(1, 1, 1, 3).setBackground('#34a853').setFontColor('white').setFontWeight('bold');
   }
-  
+
   // Check if email already exists
   const lastRow = newsletterSheet.getLastRow();
   let emailExists = false;
-  
+
   if (lastRow > 1) {
     // Only check for existing emails if there are data rows (beyond the header)
     try {
@@ -131,7 +160,7 @@ function handleNewsletterSubscription(sheet, formData) {
       emailExists = false;
     }
   }
-  
+
   if (!emailExists) {
     // Add the new subscription
     const newRow = [
@@ -139,9 +168,9 @@ function handleNewsletterSubscription(sheet, formData) {
       formData.email,
       'Subscribed'
     ];
-    
+
     newsletterSheet.appendRow(newRow);
-    
+
     // Send welcome email
     try {
       sendNewsletterWelcomeEmail(formData.email);
@@ -153,7 +182,7 @@ function handleNewsletterSubscription(sheet, formData) {
 
 function sendContactFormEmail(formData) {
   const subject = 'New Contact Form Submission - Kaizen Marketing';
-  
+
   const htmlBody = `
     <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff;">
       <!-- Header Section -->
@@ -220,14 +249,14 @@ function sendContactFormEmail(formData) {
       </div>
     </div>
   `;
-  
+
   // Send email to your team
   MailApp.sendEmail({
     to: EMAIL_TO,
     subject: subject,
     htmlBody: htmlBody
   });
-  
+
   // Send auto-reply to the customer
   const autoReplySubject = 'Thank you for contacting Kaizen Marketing';
   const autoReplyBody = `
@@ -291,7 +320,7 @@ function sendContactFormEmail(formData) {
       </div>
     </div>
   `;
-  
+
   MailApp.sendEmail({
     to: formData.email,
     subject: autoReplySubject,
@@ -301,7 +330,7 @@ function sendContactFormEmail(formData) {
 
 function sendNewsletterWelcomeEmail(email) {
   const subject = 'Welcome to Kaizen Marketing - Your Journey to Excellence Begins Now';
-  
+
   const htmlBody = `
     <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff;">
       <!-- Header Section -->
@@ -360,7 +389,7 @@ function sendNewsletterWelcomeEmail(email) {
           </p>
         </div>
   `;
-  
+
   MailApp.sendEmail({
     to: email,
     subject: subject,
