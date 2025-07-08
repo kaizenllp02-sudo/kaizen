@@ -121,7 +121,7 @@
 
 /* Blog Preview Card */
 .blog-preview-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.05); /* glass effect */
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -129,11 +129,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(10px); /* glass effect */
+  -webkit-backdrop-filter: blur(10px); /* glass effect for Safari */
 }
 
 .blog-preview-card:hover {
   transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.08); /* glass effect hover */
   border-color: rgba(229, 62, 62, 0.2);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }

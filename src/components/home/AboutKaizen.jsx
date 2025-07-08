@@ -1,5 +1,7 @@
 import React from 'react';
 import '../../styles/aboutkaizen.css';
+import { FaLinkedin } from 'react-icons/fa';
+
 
 export default function AboutKaizen() {
   return (
@@ -42,21 +44,61 @@ export default function AboutKaizen() {
               <div className="about-leader-name">Kamlesh Shukla</div>
               <div className="about-leader-role">Founder &amp; Managing Director</div>
               <div className="about-leader-desc">Ex-Nielsen, 40+ yrs in Market Research &amp; Promotions</div>
+              <a
+                href="https://www.linkedin.com/in/shuklakamlesh/"
+                className="about-leader-linkedin"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Kamlesh Shukla LinkedIn"
+                title="Kamlesh Shukla LinkedIn"
+              >
+                <FaLinkedin size={20} style={{ verticalAlign: 'middle', marginLeft: 4 }} />
+              </a>
             </div>
             <div className="about-leader">
               <div className="about-leader-name">Suneeta Bhagatjee</div>
               <div className="about-leader-role">Executive Director</div>
               <div className="about-leader-desc">Ex-BPL, Essel Group, Gitanjali Gems</div>
+              {/* <a
+                href="https://www.linkedin.com/in/suneeta-bhagatjee-2b2b2b2b/"
+                className="about-leader-linkedin"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Suneeta Bhagatjee LinkedIn"
+                title="Suneeta Bhagatjee LinkedIn"
+              >
+                <FaLinkedin size={20} style={{ verticalAlign: 'middle', marginLeft: 4 }} />
+              </a> */}
             </div>
             <div className="about-leader">
               <div className="about-leader-name">Shyam Karmakar</div>
               <div className="about-leader-role">Executive Director</div>
               <div className="about-leader-desc">Ex-MarketRx, Nielsen, Fortis; MR &amp; Social Sector Specialist</div>
+              {/* <a
+                href="https://www.linkedin.com/in/shyam-karmakar-3c3c3c3c/"
+                className="about-leader-linkedin"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shyam Karmakar LinkedIn"
+                title="Shyam Karmakar LinkedIn"
+              >
+                <FaLinkedin size={20} style={{ verticalAlign: 'middle', marginLeft: 4 }} />
+              </a> */}
             </div>
             <div className="about-leader">
               <div className="about-leader-name">Pooja Shukla</div>
               <div className="about-leader-role">Interim CEO, Research Expert</div>
               <div className="about-leader-desc">17+ Years of experience</div>
+              <a
+                href="https://www.linkedin.com/in/pooja-shukla-0b024556/"
+                className="about-leader-linkedin"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pooja Shukla LinkedIn"
+                title="Pooja Shukla LinkedIn"
+              >
+                <FaLinkedin size={20} style={{ verticalAlign: 'middle', marginLeft: 4 }} />
+              </a>
             </div>
           </div>
         </div>

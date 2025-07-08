@@ -25,18 +25,20 @@
 }
 
 .faq-item {
-    background-color: #11151c;
+    background: rgba(255, 255, 255, 0.05); /* glass effect */
     margin-bottom: 16px;
     border-radius: 10px;
-    border: 1px solid #2c2f36;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* glass border */
     cursor: pointer;
     overflow: hidden;
     transition: all 0.3s ease;
+    backdrop-filter: blur(10px); /* glass effect */
+    -webkit-backdrop-filter: blur(10px); /* glass effect for Safari */
 }
 
 .faq-item:hover {
     border-color: rgba(229, 62, 62, 0.3);
-    background-color: rgba(229, 62, 62, 0.05);
+    background: rgba(255, 255, 255, 0.08); /* glass effect hover */
 }
 
 .faq-item.active {

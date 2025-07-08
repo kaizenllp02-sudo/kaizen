@@ -59,7 +59,7 @@
 
 /* Service Card */
 .service-card {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.05); /* glass effect */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 30px;
@@ -69,6 +69,8 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    backdrop-filter: blur(10px); /* glass effect */
+    -webkit-backdrop-filter: blur(10px); /* glass effect for Safari */
 }
 
 .service-card::before {
@@ -86,8 +88,9 @@
 
 .service-card:hover {
     transform: translateY(-8px);
-    background: var(--service-color-light);
+    background: rgba(255, 255, 255, 0.08); /* glass effect hover */
     border-color: var(--service-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* subtle shadow for glass effect */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15),
         0 0 0 1px var(--service-color);
 }

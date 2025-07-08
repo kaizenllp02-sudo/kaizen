@@ -196,19 +196,22 @@
 }
 
 .blog-card {
-    background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+    background: rgba(255, 255, 255, 0.05); /* glass effect */
     border-radius: 16px;
     overflow: hidden;
     width: 100%;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* glass border */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     padding: 24px;
+    backdrop-filter: blur(10px); /* glass effect */
+    -webkit-backdrop-filter: blur(10px); /* glass effect for Safari */
 }
 
 .blog-card:hover {
     transform: translateY(-8px) scale(1.02);
+    background: rgba(255, 255, 255, 0.08); /* glass effect hover */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     border-color: rgba(239, 68, 68, 0.3);
 }
@@ -422,17 +425,19 @@
     display: flex;
     gap: 24px;
     padding: 32px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05); /* glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* glass border */
     border-radius: 16px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px); /* glass effect */
+    -webkit-backdrop-filter: blur(10px); /* glass effect for Safari */
 }
 
 .what-sets-item:hover {
     transform: translateY(-4px);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.08); /* glass effect hover */
     border-color: rgba(229, 62, 62, 0.3);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
