@@ -41,6 +41,7 @@ export default function AboutKaizen() {
           <h3 className="about-leadership-heading">Leadership Team</h3>
           <div className="about-leadership-list">
             <div className="about-leader">
+              <img src="/profile/kamlesh.jpeg" alt="Kamlesh Shukla" className="about-leader-photo" />
               <div className="about-leader-name">Kamlesh Shukla</div>
               <div className="about-leader-role">Founder &amp; Managing Director</div>
               <div className="about-leader-desc">Ex-Nielsen, 40+ yrs in Market Research &amp; Promotions</div>
@@ -55,11 +56,12 @@ export default function AboutKaizen() {
                 <FaLinkedin size={20} style={{ verticalAlign: 'middle', marginLeft: 4 }} />
               </a>
             </div>
-            <div className="about-leader">
+            {/* <div className="about-leader">
+              <img src="/profile/suneeta.jpg" alt="Suneeta Bhagatjee" className="about-leader-photo" />
               <div className="about-leader-name">Suneeta Bhagatjee</div>
               <div className="about-leader-role">Executive Director</div>
               <div className="about-leader-desc">Ex-BPL, Essel Group, Gitanjali Gems</div>
-              {/* <a
+              <a
                 href="https://www.linkedin.com/in/suneeta-bhagatjee-2b2b2b2b/"
                 className="about-leader-linkedin"
                 target="_blank"
@@ -68,13 +70,14 @@ export default function AboutKaizen() {
                 title="Suneeta Bhagatjee LinkedIn"
               >
                 <FaLinkedin size={20} style={{ verticalAlign: 'middle', marginLeft: 4 }} />
-              </a> */}
+              </a>
             </div>
             <div className="about-leader">
+              <img src="/profile/shyam.jpg" alt="Shyam Karmakar" className="about-leader-photo" />
               <div className="about-leader-name">Shyam Karmakar</div>
               <div className="about-leader-role">Executive Director</div>
               <div className="about-leader-desc">Ex-MarketRx, Nielsen, Fortis; MR &amp; Social Sector Specialist</div>
-              {/* <a
+              <a
                 href="https://www.linkedin.com/in/shyam-karmakar-3c3c3c3c/"
                 className="about-leader-linkedin"
                 target="_blank"
@@ -83,9 +86,10 @@ export default function AboutKaizen() {
                 title="Shyam Karmakar LinkedIn"
               >
                 <FaLinkedin size={20} style={{ verticalAlign: 'middle', marginLeft: 4 }} />
-              </a> */}
-            </div>
+              </a>
+            </div> */}
             <div className="about-leader">
+              <img src="/profile/pooja.jpeg" alt="Pooja Shukla" className="about-leader-photo" loading="lazy" />
               <div className="about-leader-name">Pooja Shukla</div>
               <div className="about-leader-role">Interim CEO, Research Expert</div>
               <div className="about-leader-desc">17+ Years of experience</div>
