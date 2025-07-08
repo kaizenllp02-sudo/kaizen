@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'Kaizen Blog Studio',
 
-  projectId: 'xvwfx739',
+  projectId: '33a6qbxp',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
