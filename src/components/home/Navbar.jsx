@@ -75,9 +75,9 @@ export default function Navbar() {
             <li className="kaizen-menu-list">
               <a href="/about" className="kaizen-menu-link">About</a>
             </li>
-            {/* <li className="kaizen-menu-list">
-              <a href="/career" className="kaizen-menu-link">Career</a>
-            </li> */}
+            <li className="kaizen-menu-list">
+              <a href="/case-studies" className="kaizen-menu-link">Case Studies</a>
+            </li>
             <li className="kaizen-menu-list">
               <a href="/blog" className="kaizen-menu-link">Blog</a>
             </li>
@@ -104,9 +104,9 @@ export default function Navbar() {
             <li className="kaizen-menu-list">
               <a href="/about" className="kaizen-menu-link" onClick={toggleMenu}>About</a>
             </li>
-            {/* <li className="kaizen-menu-list">
-              <a href="/career" className="kaizen-menu-link" onClick={toggleMenu}>Career</a>
-            </li> */}
+            <li className="kaizen-menu-list">
+              <a href="/case-studies" className="kaizen-menu-link" onClick={toggleMenu}>Case Studies</a>
+            </li>
             <li className="kaizen-menu-list">
               <a href="/blog" className="kaizen-menu-link" onClick={toggleMenu}>Blog</a>
             </li>
