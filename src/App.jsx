@@ -4,11 +4,10 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import StrategicPlanningBrand from './pages/StrategicPlanningBrand';
-import CaseStudyFMCG from './pages/CaseStudyFMCG';
-import CaseStudyHaircare from './pages/CaseStudyHaircare';
-import CaseStudyHealthcare from './pages/CaseStudyHealthcare';
 import { BackgroundBeams } from "./components/ui/background-beams";
-import CsbTemplate from './pages/CsbTemplate';
+import CsbTemplate from './pages/CsbFMCG';
+import CsbHaircare from './pages/CsbHaircare';
+import CsbHealthcare from './pages/CsbHealthcare';
 
 export default function App() {
   return (
@@ -21,10 +20,9 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/services/strategic-brand-planning" element={<StrategicPlanningBrand />} />
-          <Route path="/case-study/fmcg" element={<CaseStudyFMCG />} />
-          <Route path="/case-study/haircare" element={<CaseStudyHaircare />} />
-          <Route path="/case-study/healthcare" element={<CaseStudyHealthcare />} />
-          <Route path="/case-study/csb" element={<CsbTemplate />} />
+          <Route path="/case-study/fmcg" element={<CsbTemplate />} />
+          <Route path="/case-study/haircare" element={<CsbHaircare />} />
+          <Route path="/case-study/healthcare" element={<CsbHealthcare />} />
         </Routes>
       </Router>
     </>
