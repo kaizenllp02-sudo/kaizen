@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../../styles/Navbar.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import ReactGA from 'react-ga4';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,7 +61,14 @@ export default function Navbar() {
           </a>
 
           {/* Hamburger Icon */}
-          <button className="kaizen-hamburger" onClick={toggleMenu} aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>
+          <button className="kaizen-hamburger" onClick={() => {
+            ReactGA.event({
+              category: 'Button',
+              action: 'Click',
+              label: 'Navbar Hamburger'
+            });
+            toggleMenu();
+          }} aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>
             <i className={`fa-solid ${isMenuOpen ? 'fa-xmark' : 'fa-bars'}`} aria-hidden="true"></i>
           </button>
 
@@ -70,7 +78,14 @@ export default function Navbar() {
               <a href="/" className="kaizen-menu-link">Home</a>
             </li>
             <li className="kaizen-menu-list">
-              <a href="#services" className="kaizen-menu-link" onClick={scrollToServices}>Services</a>
+              <a href="#services" className="kaizen-menu-link" onClick={e => {
+                ReactGA.event({
+                  category: 'Button',
+                  action: 'Click',
+                  label: 'Navbar Services Link'
+                });
+                scrollToServices(e);
+              }}>Services</a>
             </li>
             <li className="kaizen-menu-list">
               <a href="/about" className="kaizen-menu-link">About</a>
@@ -82,7 +97,14 @@ export default function Navbar() {
               <a href="/blog" className="kaizen-menu-link">Blog</a>
             </li>
             <li className="kaizen-menu-list">
-              <a href="#contact" className="kaizen-menu-link" onClick={scrollToContactForm}>Contact Us</a>
+              <a href="#contact" className="kaizen-menu-link" onClick={e => {
+                ReactGA.event({
+                  category: 'Button',
+                  action: 'Click',
+                  label: 'Navbar Contact Link'
+                });
+                scrollToContactForm(e);
+              }}>Contact Us</a>
             </li>
           </ul>
         </section>
@@ -91,7 +113,14 @@ export default function Navbar() {
       {/* Fullscreen Mobile Menu */}
       {isMenuOpen && (
         <div className="kaizen-fullscreen-menu">
-          <button className="kaizen-close" onClick={toggleMenu} aria-label="Close menu">
+          <button className="kaizen-close" onClick={() => {
+            ReactGA.event({
+              category: 'Button',
+              action: 'Click',
+              label: 'Navbar Close Menu'
+            });
+            toggleMenu();
+          }} aria-label="Close menu">
             <i className="fa-solid fa-xmark" aria-hidden="true"></i>
           </button>
           <ul className="kaizen-fullscreen-list">
@@ -99,7 +128,14 @@ export default function Navbar() {
               <a href="/" className="kaizen-menu-link" onClick={toggleMenu}>Home</a>
             </li>
             <li className="kaizen-menu-list">
-              <a href="#services" className="kaizen-menu-link" onClick={scrollToServices}>Services</a>
+              <a href="#services" className="kaizen-menu-link" onClick={e => {
+                ReactGA.event({
+                  category: 'Button',
+                  action: 'Click',
+                  label: 'Navbar Services Link (Mobile)'
+                });
+                scrollToServices(e);
+              }}>Services</a>
             </li>
             <li className="kaizen-menu-list">
               <a href="/about" className="kaizen-menu-link" onClick={toggleMenu}>About</a>
@@ -111,7 +147,14 @@ export default function Navbar() {
               <a href="/blog" className="kaizen-menu-link" onClick={toggleMenu}>Blog</a>
             </li>
             <li className="kaizen-menu-list">
-              <a href="#contact" className="kaizen-menu-link" onClick={scrollToContactForm}>Contact Us</a>
+              <a href="#contact" className="kaizen-menu-link" onClick={e => {
+                ReactGA.event({
+                  category: 'Button',
+                  action: 'Click',
+                  label: 'Navbar Contact Link (Mobile)'
+                });
+                scrollToContactForm(e);
+              }}>Contact Us</a>
             </li>
           </ul>
         </div>

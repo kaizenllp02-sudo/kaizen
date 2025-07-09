@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactGA from 'react-ga4';
 import '../../styles/faq.css';
 
 const faqs = [
@@ -40,7 +41,14 @@ export default function FAQ() {
                         <div
                             key={index}
                             className={`faq-item ${activeIndex === index ? 'active' : ''}`}
-                            onClick={() => toggleFAQ(index)}
+                            onClick={() => {
+                              ReactGA.event({
+                                category: 'Button',
+                                action: 'Click',
+                                label: `FAQ Toggle: ${index}`
+                              });
+                              toggleFAQ(index);
+                            }}
                         >
                             <div className="faq-question">
                                 <span>{item.question}</span>

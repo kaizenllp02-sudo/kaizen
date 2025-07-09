@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/herosection.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import ReactGA from 'react-ga4';
 
 export default function HeroSection() {
   return (
@@ -14,7 +15,13 @@ export default function HeroSection() {
           From doorsteps to digital screens, Kaizen delivers seamless online + offline brand activations that generate up to <span style={{ fontWeight: 'bold', color: '#e53e3e' }}>3X higher ROI</span> compared to traditional campaigns.
           We turn research into action and consumer attention into real results.
         </p>
-        <button className="hero-cta" aria-label="Get in touch with Kaizen">Get in Touch</button>
+        <button className="hero-cta" aria-label="Get in touch with Kaizen" onClick={() => {
+          ReactGA.event({
+            category: 'Button',
+            action: 'Click',
+            label: 'Hero section: Get in Touch'
+          });
+        }}>Get in Touch</button>
 
         {/* <div className="scroll-down-indicator">
           <i className="fa-solid fa-angle-down"></i>

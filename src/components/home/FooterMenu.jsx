@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactGA from 'react-ga4';
 import { env } from '../../lib/env';
 import '../../styles/footerMenu.css';
 
@@ -91,7 +92,14 @@ export default function FooterMenu() {
                             {newsletterMessage}
                         </div>
                     )}
-                    <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
+                    <form className="newsletter-form" onSubmit={e => {
+                        ReactGA.event({
+                          category: 'Button',
+                          action: 'Click',
+                          label: 'Newsletter Subscribe'
+                        });
+                        handleNewsletterSubmit(e);
+                    }}>
                         <input 
                             type="email" 
                             placeholder="Subscribe to our newsletter"
@@ -111,7 +119,14 @@ export default function FooterMenu() {
                 {/* Navigation Links */}
                 <div className="footer-menu-nav">
                     <div className="footer-menu-nav-column">
-                        <h4 className="footer-menu-nav-header" onClick={() => toggleSection('navigate')}>
+                        <h4 className="footer-menu-nav-header" onClick={() => {
+                            ReactGA.event({
+                              category: 'Button',
+                              action: 'Click',
+                              label: 'Footer Navigate Accordion'
+                            });
+                            toggleSection('navigate');
+                        }}>
                             <i className="fa-solid fa-compass"></i>
                             Navigate
                             <i className={`fa-solid fa-chevron-down footer-menu-accordion-icon ${openSections.navigate ? 'open' : ''}`}></i>
@@ -126,7 +141,14 @@ export default function FooterMenu() {
                     </div>
 
                     <div className="footer-menu-nav-column">
-                        <h4 className="footer-menu-nav-header" onClick={() => toggleSection('services')}>
+                        <h4 className="footer-menu-nav-header" onClick={() => {
+                            ReactGA.event({
+                              category: 'Button',
+                              action: 'Click',
+                              label: 'Footer Services Accordion'
+                            });
+                            toggleSection('services');
+                        }}>
                             <i className="fa-solid fa-briefcase"></i>
                             Services
                             <i className={`fa-solid fa-chevron-down footer-menu-accordion-icon ${openSections.services ? 'open' : ''}`}></i>
@@ -141,7 +163,14 @@ export default function FooterMenu() {
                     </div>
 
                     <div className="footer-menu-nav-column">
-                        <h4 className="footer-menu-nav-header" onClick={() => toggleSection('company')}>
+                        <h4 className="footer-menu-nav-header" onClick={() => {
+                            ReactGA.event({
+                              category: 'Button',
+                              action: 'Click',
+                              label: 'Footer Company Accordion'
+                            });
+                            toggleSection('company');
+                        }}>
                             <i className="fa-solid fa-users"></i>
                             Company
                             <i className={`fa-solid fa-chevron-down footer-menu-accordion-icon ${openSections.company ? 'open' : ''}`}></i>
@@ -156,7 +185,14 @@ export default function FooterMenu() {
                     </div>
 
                     <div className="footer-menu-nav-column">
-                        <h4 className="footer-menu-nav-header" onClick={() => toggleSection('legal')}>
+                        <h4 className="footer-menu-nav-header" onClick={() => {
+                            ReactGA.event({
+                              category: 'Button',
+                              action: 'Click',
+                              label: 'Footer Legal Accordion'
+                            });
+                            toggleSection('legal');
+                        }}>
                             <i className="fa-solid fa-scale-balanced"></i>
                             Legal
                             <i className={`fa-solid fa-chevron-down footer-menu-accordion-icon ${openSections.legal ? 'open' : ''}`}></i>

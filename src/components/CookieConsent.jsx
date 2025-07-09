@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactGA from 'react-ga4';
 
 const COOKIE_KEY = 'kaizen_cookie_consent';
 
@@ -46,7 +47,14 @@ export default function CookieConsent() {
       </div>
       <div style={{ display: 'flex', gap: 12, marginTop: 6 }}>
         <button
-          onClick={acceptCookies}
+          onClick={() => {
+            ReactGA.event({
+              category: 'Button',
+              action: 'Click',
+              label: 'Cookie Consent Accept'
+            });
+            acceptCookies();
+          }}
           style={{
             background: '#e53e3e',
             color: '#fff',
@@ -64,7 +72,14 @@ export default function CookieConsent() {
           Accept
         </button>
         <button
-          onClick={rejectCookies}
+          onClick={() => {
+            ReactGA.event({
+              category: 'Button',
+              action: 'Click',
+              label: 'Cookie Consent Reject'
+            });
+            rejectCookies();
+          }}
           style={{
             background: '#444',
             color: '#fff',

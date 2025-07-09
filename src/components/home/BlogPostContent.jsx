@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { PortableText } from '@portabletext/react';
 import { urlFor } from '../../lib/sanity';
 import '../../styles/blogPost.css';
+import ReactGA from 'react-ga4';
 
 const BlogPostContent = ({ post, loading, error }) => {
   const navigate = useNavigate();
@@ -73,10 +74,24 @@ const BlogPostContent = ({ post, loading, error }) => {
             <h2>Oops! Something went wrong</h2>
             <p>{error}</p>
             <div className="error-actions">
-              <button onClick={() => navigate('/blog')} className="btn-primary">
+              <button onClick={() => {
+                ReactGA.event({
+                  category: 'Button',
+                  action: 'Click',
+                  label: 'Back to Blog'
+                });
+                navigate('/blog');
+              }} className="btn-primary">
                 Back
               </button>
-              <button onClick={() => window.location.reload()} className="btn-secondary">
+              <button onClick={() => {
+                ReactGA.event({
+                  category: 'Button',
+                  action: 'Click',
+                  label: 'Try Again Blog Error'
+                });
+                window.location.reload();
+              }} className="btn-secondary">
                 Try Again
               </button>
             </div>
@@ -202,11 +217,15 @@ const BlogPostContent = ({ post, loading, error }) => {
             <div className="share-buttons">
               <button 
                 onClick={() => {
+                  ReactGA.event({
+                    category: 'Button',
+                    action: 'Click',
+                    label: 'Share Blog Post'
+                  });
                   navigator.share({
                     title: post.title,
                     url: window.location.href
                   }).catch(() => {
-                    // Fallback for browsers that don't support Web Share API
                     navigator.clipboard.writeText(window.location.href)
                     alert('Link copied to clipboard!')
                   })

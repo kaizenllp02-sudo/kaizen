@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 import { env } from '../../lib/env';
 import '../../styles/contactform.css';
+import ReactGA from 'react-ga4';
 
 export default function ContactForm() {
   // Form state for contact form
@@ -212,6 +213,13 @@ export default function ContactForm() {
               boxShadow: '0 2px 8px rgba(229,62,62,0.12)'
             }}
             aria-label="Send Message"
+            onClick={() => {
+              ReactGA.event({
+                category: 'Button',
+                action: 'Click',
+                label: 'Contact Form Submit'
+              });
+            }}
           >
             Send Message
           </Button>
@@ -237,6 +245,13 @@ export default function ContactForm() {
                   boxShadow: '0 2px 8px rgba(0,0,255,0.12)'
                 }}
                 aria-label="Call Kaizen Marketing"
+                onClick={() => {
+                  ReactGA.event({
+                    category: 'Button',
+                    action: 'Click',
+                    label: 'Call Us Button'
+                  });
+                }}
               >
                 Call Us
               </Button>
@@ -261,6 +276,13 @@ export default function ContactForm() {
                   boxShadow: '0 2px 8px rgba(37,211,102,0.12)'
                 }}
                 aria-label="WhatsApp Kaizen Marketing"
+                onClick={() => {
+                  ReactGA.event({
+                    category: 'Button',
+                    action: 'Click',
+                    label: 'WhatsApp Us Button'
+                  });
+                }}
               >
                 WhatsApp Us
               </Button>

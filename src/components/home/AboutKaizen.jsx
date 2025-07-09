@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/aboutkaizen.css';
 import { FaLinkedin } from 'react-icons/fa';
+import ReactGA from 'react-ga4';
 
 
 export default function AboutKaizen() {
@@ -106,7 +107,14 @@ export default function AboutKaizen() {
             </div>
           </div>
         </div>
-        <button className="about-cta" onClick={() => window.location.href = "/about"} aria-label="Learn more about Kaizen">
+        <button className="about-cta" onClick={() => {
+          ReactGA.event({
+            category: 'Button',
+            action: 'Click',
+            label: 'Learn More About Us'
+          });
+          window.location.href = "/about";
+        }} aria-label="Learn more about Kaizen">
           Learn More About Us
         </button>
       </div>
