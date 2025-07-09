@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga4';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -10,7 +12,18 @@ import CsbHaircare from './pages/CsbHaircare';
 import CsbHealthcare from './pages/CsbHealthcare';
 import CaseStudies from './pages/CaseStudies';
 
+const GA_MEASUREMENT_ID = 'G-F72YZ1B2D1';
+
 export default function App() {
+  useEffect(() => {
+    ReactGA.initialize(GA_MEASUREMENT_ID);
+    ReactGA.send({ hitType: 'pageview', page: window.location.pathname + window.location.search });
+    const handleRouteChange = () => {
+      ReactGA.send({ hitType: 'pageview', page: window.location.pathname + window.location.search });
+    };
+    window.addEventListener('popstate', handleRouteChange);
+    return () => window.removeEventListener('popstate', handleRouteChange);
+  }, []);
   return (
     <>
       <BackgroundBeams />
