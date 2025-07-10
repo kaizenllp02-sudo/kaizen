@@ -51,7 +51,9 @@ const CaseStudy = () => {
     const handleModalSubmit = async (e) => {
         e.preventDefault();
         setError('');
-        if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+        const trimmedEmail = email.trim();
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!trimmedEmail || !emailRegex.test(trimmedEmail)) {
             setError('Please enter a valid email address.');
             return;
         }
@@ -61,13 +63,13 @@ const CaseStudy = () => {
             if (!GOOGLE_SCRIPT_URL) throw new Error('Google Apps Script URL not configured');
             const params = new URLSearchParams();
             params.append('type', 'case-study-viewer');
-            params.append('email', email);
+            params.append('email', trimmedEmail);
             params.append('timestamp', new Date().toISOString());
             await fetch(`${GOOGLE_SCRIPT_URL}?${params.toString()}`, {
                 method: 'GET',
                 mode: 'no-cors'
             });
-            localStorage.setItem('caseStudyViewerEmail', email);
+            localStorage.setItem('caseStudyViewerEmail', trimmedEmail);
             setModalOpen(false);
             setSubmitting(false);
             setEmail('');
