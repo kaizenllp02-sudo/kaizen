@@ -10,7 +10,8 @@ export default function AboutKaizen() {
       <div className="about-container">
         <h2 className="about-heading">Who We Are</h2>
         <p className="about-description">
-          Kaizen is a research and marketing company inspired by the Japanese philosophy of continuous improvement. Our mission is to deliver better solutions every day for every client, driven by a deep understanding of consumers and real-time execution.
+          Kaizen is a research and marketing company inspired by the Japanese philosophy of continuous improvement.<br />
+          Our mission is to deliver better solutions every day for every client, driven by a deep understanding of consumers and real-time execution.
         </p>
 
         {/* <div className="about-keywords">
