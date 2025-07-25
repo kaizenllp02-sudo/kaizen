@@ -109,6 +109,12 @@
     cursor: pointer;
 }
 
+@media (max-width: 1200px) {
+    .kaizen-navbar {
+        width: 80%
+    }
+}
+
 /* ===== Mobile Styles ===== */
 @media (max-width: 900px) {
     .kaizen-navbar {
