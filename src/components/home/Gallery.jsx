@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../styles/gallery.css';
 
-// Example images (replace with your own or fetch dynamically)
 const images = [
   {
     src: 'images/image1.png',
@@ -37,6 +36,30 @@ const images = [
   },
   {
     src: 'images/image9.png',
+    alt: 'City Skyline 2'
+  },
+  // {
+  //   src: 'images/image10.jpg',
+  //   alt: 'Sunset Beach'
+  // },
+  {
+    src: 'images/image11.jpg',
+    alt: 'City Skyline'
+  },
+  {
+    src: 'images/image12.jpg',
+    alt: 'Desert Dunes 2'
+  },
+  {
+    src: 'images/image13.jpg',
+    alt: 'Forest Path 2'
+  },
+  {
+    src: 'images/image14.jpg',
+    alt: 'Sunset Beach'
+  },
+  {
+    src: 'images/image15.jpg',
     alt: 'City Skyline 2'
   }
 ];

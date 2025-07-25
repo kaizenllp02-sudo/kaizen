@@ -62,7 +62,7 @@ const BlogPreview = () => {
         {/* Header Section */}
         <div className="blog-preview-header">
           <div className="blog-preview-heading">
-            <h2>Latest Insights</h2>
+            <h2>Latest Blogs</h2>
             <p>Stay updated with our latest thoughts, strategies, and industry insights</p>
           </div>
           <Link to="/blog" className="blog-preview-see-all" aria-label="See all blog posts">
