@@ -23,6 +23,8 @@
     padding-bottom: 40px;
     justify-items: center;
     align-items: stretch;
+    display: flex;
+    justify-content: center;
 }
 
 .about-leader {
