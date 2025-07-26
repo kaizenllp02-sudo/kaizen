@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import Navbar from '../components/home/Navbar.jsx';
 import { BackgroundBeamsDemo } from '../components/ui/background-beams-demo';
 import CookieConsent from '../components/CookieConsent.jsx';
@@ -19,6 +20,18 @@ import Footer from '../components/home/Footer';
 import { Helmet } from 'react-helmet-async';
 
 export default function Home() {
+  useEffect(() => {
+    if (sessionStorage.getItem('scrollToTestimonials')) {
+      setTimeout(() => {
+        const el = document.querySelector('.testimonials-section, #testimonials, [class*="testimonial"]');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        sessionStorage.removeItem('scrollToTestimonials');
+      }, 200);
+    }
+  }, []);
+
   return (
     <>
       <Helmet>

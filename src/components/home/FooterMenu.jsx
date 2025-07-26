@@ -186,12 +186,33 @@ export default function FooterMenu() {
                             <i className={`fa-solid fa-chevron-down footer-menu-accordion-icon ${openSections.services ? 'open' : ''}`}></i>
                         </h4>
                         <ul className={`footer-menu-nav-list ${openSections.services ? 'open' : ''}`}>
-                            <li><a href="/sampling">Sampling</a></li>
-                            <li><a href="/kiosk">Kiosk</a></li>
-                            <li><a href="/digital-marketing">Digital Marketing</a></li>
-                            <li><a href="/influencer-connection">Influencer Connection</a></li>
-                            <li><a href="/brand-strategy">Brand Strategy</a></li>
-
+                            {[
+                              { href: '/sampling', label: 'Sampling' },
+                              { href: '/kiosk', label: 'Kiosk' },
+                              { href: '/digital-marketing', label: 'Digital Marketing' },
+                              { href: '/influencer-connection', label: 'Influencer Connection' },
+                              { href: '/brand-strategy', label: 'Brand Strategy' }
+                            ].map(item => (
+                              <li key={item.href}>
+                                <a href="#services" onClick={e => {
+                                  e.preventDefault();
+                                  ReactGA.event({
+                                    category: 'Button',
+                                    action: 'Click',
+                                    label: `Footer Service Link: ${item.label}`
+                                  });
+                                  if (window.location.pathname !== '/') {
+                                    sessionStorage.setItem('scrollToServices', 'true');
+                                    window.location.href = '/';
+                                    return;
+                                  }
+                                  const el = document.querySelector('.services-offered, #services, [class*="services"]');
+                                  if (el) {
+                                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                  }
+                                }}>{item.label}</a>
+                              </li>
+                            ))}
                         </ul>
                     </div>
 
@@ -205,15 +226,31 @@ export default function FooterMenu() {
                             toggleSection('company');
                         }}>
                             <i className="fa-solid fa-users"></i>
-                            Company
+                            Miscellaneous
                             <i className={`fa-solid fa-chevron-down footer-menu-accordion-icon ${openSections.company ? 'open' : ''}`}></i>
                         </h4>
                         <ul className={`footer-menu-nav-list ${openSections.company ? 'open' : ''}`}>
-                            <li><a href="/careers">Careers</a></li>
+                            {/* <li><a href="/careers">Careers</a></li> */}
                             <li><a href="/blog">Blog</a></li>
-                            <li><a href="/news">News</a></li>
-                            <li><a href="/testimonials">Testimonials</a></li>
-                            <li><a href="/support">Support</a></li>
+                            {/* <li><a href="/news">News</a></li> */}
+                            <li><a href="/testimonials" onClick={e => {
+                                e.preventDefault();
+                                ReactGA.event({
+                                  category: 'Button',
+                                  action: 'Click',
+                                  label: 'Footer Testimonials Link'
+                                });
+                                if (window.location.pathname !== '/') {
+                                  sessionStorage.setItem('scrollToTestimonials', 'true');
+                                  window.location.href = '/';
+                                  return;
+                                }
+                                const el = document.querySelector('.testimonials-section, #testimonials, [class*="testimonial"]');
+                                if (el) {
+                                  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }
+                            }}>Testimonials</a></li>
+                            {/* <li><a href="/support">Support</a></li> */}
                         </ul>
                     </div>
                 </div>

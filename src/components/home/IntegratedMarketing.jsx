@@ -121,7 +121,7 @@ export default function IntegratedMarketing() {
                         <input
                             type="email"
                             className="deck-request-input"
-                            placeholder="Enter your business email"
+                            placeholder="Enter your email address"
                             value={deckEmail}
                             onChange={handleDeckChange}
                             required
