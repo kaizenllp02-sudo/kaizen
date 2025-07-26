@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/home/Navbar';
 import AboutKaizen from '../components/home/AboutKaizen';
 import ContactForm from '../components/home/ContactForm';
-import FAQ from '../components/home/FAQ';
+import FAQ from '../components/home/FAQsection';
 import FooterMenu from '../components/home/FooterMenu';
 import Footer from '../components/home/Footer';
 import { client, urlFor } from '../lib/sanity';

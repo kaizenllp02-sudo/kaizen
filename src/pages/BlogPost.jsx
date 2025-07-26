@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/home/Navbar.jsx';
 import BlogPostContent from '../components/home/BlogPostContent.jsx';
 import ContactForm from '../components/home/ContactForm.jsx';
-import FAQ from '../components/home/FAQ.jsx';
+import FAQ from '../components/home/FAQsection.jsx';
 import FooterMenu from '../components/home/FooterMenu.jsx';
 import Footer from '../components/home/Footer.jsx';
 import { useParams } from 'react-router-dom';

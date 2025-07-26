@@ -13,7 +13,7 @@ import Testimonials from '../components/home/Testimonials';
 import BlogPreview from '../components/home/BlogPreview';
 import ContactForm from '../components/home/ContactForm';
 import Gallery from '../components/home/Gallery.jsx';
-import FAQ from '../components/home/FAQ.jsx';
+import FAQ from '../components/home/FAQsection.jsx';
 import FooterMenu from '../components/home/FooterMenu.jsx';
 import Footer from '../components/home/Footer';
 import { Helmet } from 'react-helmet-async';

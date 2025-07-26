@@ -11,6 +11,7 @@ import CsbTemplate from './pages/CsbFMCG';
 import CsbHaircare from './pages/CsbHaircare';
 import CsbHealthcare from './pages/CsbHealthcare';
 import CaseStudies from './pages/CaseStudies';
+import FAQ from './pages/FAQ';
 
 const GA_MEASUREMENT_ID = 'G-F72YZ1B2D1';
 
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/case-study/fmcg" element={<CsbTemplate />} />
           <Route path="/case-study/haircare" element={<CsbHaircare />} />
           <Route path="/case-study/healthcare" element={<CsbHealthcare />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
       </Router>
     </>
