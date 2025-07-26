@@ -77,11 +77,11 @@ export default function About() {
                   {/* Stats Section */}
                   <div className="about-stats">
                     <div className="about-stat-item">
-                      <div className="about-stat-number">300+</div>
+                      <div className="about-stat-number">500+</div>
                       <div className="about-stat-label">Completed Projects</div>
                     </div>
                     <div className="about-stat-item">
-                      <div className="about-stat-number">50+</div>
+                      <div className="about-stat-number">75+</div>
                       <div className="about-stat-label">Satisfied Customers</div>
                     </div>
                     <div className="about-stat-item">
