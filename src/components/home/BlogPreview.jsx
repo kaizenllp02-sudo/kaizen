@@ -65,7 +65,7 @@ const BlogPreview = () => {
             <h2>Latest Blogs</h2>
             <p>Stay updated with our latest thoughts, strategies, and industry insights</p>
           </div>
-          <Link to="/blog" className="blog-preview-see-all" aria-label="See all blog posts">
+          <Link to="/blog" className="blog-preview-see-all" aria-label="See all blog posts" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             See All
             <i className="fas fa-arrow-right" aria-hidden="true"></i>
           </Link>
@@ -78,6 +78,7 @@ const BlogPreview = () => {
               key={post._id}
               to={`/blog/${post.slug.current}`}
               className="blog-preview-card-link"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <article className="blog-preview-card">
                 {post.mainImage && (
