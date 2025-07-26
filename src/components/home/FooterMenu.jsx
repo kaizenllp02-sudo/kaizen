@@ -29,11 +29,11 @@ export default function FooterMenu() {
 
         try {
             const GOOGLE_SCRIPT_URL = env.GOOGLE_SCRIPT_URL;
-            
+
             if (!GOOGLE_SCRIPT_URL) {
                 throw new Error('Google Apps Script URL not configured');
             }
-            
+
             const params = new URLSearchParams();
             params.append('type', 'newsletter');
             params.append('email', newsletterData.email);
@@ -53,7 +53,7 @@ export default function FooterMenu() {
         } catch (error) {
             console.error('Error submitting newsletter:', error);
             setNewsletterMessage('Failed to subscribe. Please try again.');
-            
+
             // Clear error message after 5 seconds
             setTimeout(() => setNewsletterMessage(null), 5000);
         }
@@ -69,7 +69,7 @@ export default function FooterMenu() {
                         </div>
                         <div className="footer-menu-logo-text">
                             <h2>Kaizen</h2>
-                            <span>Marketing</span>
+                            <span>Promotions</span>
                         </div>
                     </div>
                     <p className="footer-menu-tagline">
@@ -94,14 +94,14 @@ export default function FooterMenu() {
                     )}
                     <form className="newsletter-form" onSubmit={e => {
                         ReactGA.event({
-                          category: 'Button',
-                          action: 'Click',
-                          label: 'Newsletter Subscribe'
+                            category: 'Button',
+                            action: 'Click',
+                            label: 'Newsletter Subscribe'
                         });
                         handleNewsletterSubmit(e);
                     }}>
-                        <input 
-                            type="email" 
+                        <input
+                            type="email"
                             placeholder="Subscribe to our newsletter"
                             value={newsletterData.email}
                             onChange={handleNewsletterChange}
@@ -121,9 +121,9 @@ export default function FooterMenu() {
                     <div className="footer-menu-nav-column">
                         <h4 className="footer-menu-nav-header" onClick={() => {
                             ReactGA.event({
-                              category: 'Button',
-                              action: 'Click',
-                              label: 'Footer Navigate Accordion'
+                                category: 'Button',
+                                action: 'Click',
+                                label: 'Footer Navigate Accordion'
                             });
                             toggleSection('navigate');
                         }}>
@@ -134,18 +134,50 @@ export default function FooterMenu() {
                         <ul className={`footer-menu-nav-list ${openSections.navigate ? 'open' : ''}`}>
                             <li><a href="/">Home</a></li>
                             <li><a href="/about">About Us</a></li>
-                            <li><a href="/services">Services</a></li>
-                            <li><a href="/portfolio">Portfolio</a></li>
-                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="#services" onClick={e => {
+                                e.preventDefault();
+                                ReactGA.event({
+                                    category: 'Button',
+                                    action: 'Click',
+                                    label: 'Footer Services Link'
+                                });
+                                if (window.location.pathname !== '/') {
+                                    sessionStorage.setItem('scrollToServices', 'true');
+                                    window.location.href = '/';
+                                    return;
+                                }
+                                const el = document.querySelector('.services-offered, #services, [class*="services"]');
+                                if (el) {
+                                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }
+                            }}>Services</a></li>
+                            <li><a href="/faq">FAQ</a></li>
+                            <li><a href="#contact" onClick={e => {
+                                e.preventDefault();
+                                ReactGA.event({
+                                  category: 'Button',
+                                  action: 'Click',
+                                  label: 'Footer Contact Link'
+                                });
+                                if (window.location.pathname !== '/') {
+                                  sessionStorage.setItem('scrollToContact', 'true');
+                                  window.location.href = '/';
+                                  return;
+                                }
+                                const el = document.querySelector('.kaizen-contact-section, #contact, [class*="contact"]');
+                                if (el) {
+                                  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }
+                            }}>Contact</a></li>
                         </ul>
                     </div>
 
                     <div className="footer-menu-nav-column">
                         <h4 className="footer-menu-nav-header" onClick={() => {
                             ReactGA.event({
-                              category: 'Button',
-                              action: 'Click',
-                              label: 'Footer Services Accordion'
+                                category: 'Button',
+                                action: 'Click',
+                                label: 'Footer Services Accordion'
                             });
                             toggleSection('services');
                         }}>
@@ -154,20 +186,21 @@ export default function FooterMenu() {
                             <i className={`fa-solid fa-chevron-down footer-menu-accordion-icon ${openSections.services ? 'open' : ''}`}></i>
                         </h4>
                         <ul className={`footer-menu-nav-list ${openSections.services ? 'open' : ''}`}>
+                            <li><a href="/sampling">Sampling</a></li>
+                            <li><a href="/kiosk">Kiosk</a></li>
                             <li><a href="/digital-marketing">Digital Marketing</a></li>
+                            <li><a href="/influencer-connection">Influencer Connection</a></li>
                             <li><a href="/brand-strategy">Brand Strategy</a></li>
-                            <li><a href="/content-creation">Content Creation</a></li>
-                            <li><a href="/social-media">Social Media</a></li>
-                            <li><a href="/analytics">Analytics</a></li>
+
                         </ul>
                     </div>
 
                     <div className="footer-menu-nav-column">
                         <h4 className="footer-menu-nav-header" onClick={() => {
                             ReactGA.event({
-                              category: 'Button',
-                              action: 'Click',
-                              label: 'Footer Company Accordion'
+                                category: 'Button',
+                                action: 'Click',
+                                label: 'Footer Company Accordion'
                             });
                             toggleSection('company');
                         }}>
@@ -181,27 +214,6 @@ export default function FooterMenu() {
                             <li><a href="/news">News</a></li>
                             <li><a href="/testimonials">Testimonials</a></li>
                             <li><a href="/support">Support</a></li>
-                        </ul>
-                    </div>
-
-                    <div className="footer-menu-nav-column">
-                        <h4 className="footer-menu-nav-header" onClick={() => {
-                            ReactGA.event({
-                              category: 'Button',
-                              action: 'Click',
-                              label: 'Footer Legal Accordion'
-                            });
-                            toggleSection('legal');
-                        }}>
-                            <i className="fa-solid fa-scale-balanced"></i>
-                            Legal
-                            <i className={`fa-solid fa-chevron-down footer-menu-accordion-icon ${openSections.legal ? 'open' : ''}`}></i>
-                        </h4>
-                        <ul className={`footer-menu-nav-list ${openSections.legal ? 'open' : ''}`}>
-                            <li><a href="/privacy">Privacy Policy</a></li>
-                            <li><a href="/terms">Terms of Service</a></li>
-                            <li><a href="/cookies">Cookie Policy</a></li>
-                            <li><a href="/disclaimer">Disclaimer</a></li>
                         </ul>
                     </div>
                 </div>
