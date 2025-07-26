@@ -98,14 +98,14 @@ const CsbHaircare = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="csb-template-right">
+                    {/* <div className="csb-template-right">
                         {images.map((img, idx) => (
                             <figure key={idx} className="csb-template-image-block">
                                 <img src={img.src} alt={img.caption} className="csb-template-image" />
                                 <figcaption className="csb-template-caption">{img.caption}</figcaption>
                             </figure>
                         ))}
-                    </div>
+                    </div> */}
                 </section>
             </main>
             <ContactForm />

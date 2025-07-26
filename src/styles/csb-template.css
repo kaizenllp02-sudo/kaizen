@@ -64,7 +64,8 @@ body,
 }
 
 .csb-template-left {
-    width: 50%;
+    width: 100%;
+    /* change the width to 50% when image available */
     flex: none;
     display: flex;
     flex-direction: column;
@@ -101,7 +102,8 @@ body,
 }
 
 .csb-template-right {
-    width: 50%;
+    width: 0%;
+    /* change the width to 50% when image available */
     flex: none;
     display: flex;
     flex-direction: column;
