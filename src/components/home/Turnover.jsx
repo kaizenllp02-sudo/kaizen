@@ -7,17 +7,17 @@ const Turnover = () => {
   const sectionRef = useRef(null)
   const stats = [
     {
-      number: "10+",
+      number: "300+",
       label: "Cities",
       targetNumber: 10
     },
     {
-      number: "30+",
+      number: "75+",
       label: "Years Combined Experience",
       targetNumber: 30
     },
     {
-      number: "100+",
+      number: "300+",
       label: "Successful Campaigns",
       targetNumber: 100
     },
@@ -28,7 +28,6 @@ const Turnover = () => {
     }
   ]
 
-  // Intersection Observer to detect when section is in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -50,7 +49,6 @@ const Turnover = () => {
     }
   }, [isVisible])
 
-  // Animate numbers when section becomes visible
   useEffect(() => {
     if (isVisible) {
       stats.forEach((stat, index) => {
@@ -63,7 +61,6 @@ const Turnover = () => {
           const elapsed = Date.now() - startTime
           const progress = Math.min(elapsed / duration, 1)
           
-          // Easing function for smooth animation
           const easeOutQuart = 1 - Math.pow(1 - progress, 4)
           const currentValue = Math.floor(startValue + (endValue - startValue) * easeOutQuart)
 
@@ -78,7 +75,6 @@ const Turnover = () => {
           }
         }
 
-        // Stagger the start of each animation
         setTimeout(() => {
           animate()
         }, index * 200)
@@ -87,7 +83,7 @@ const Turnover = () => {
   }, [isVisible])
 
   const formatNumber = (value, index) => {
-    if (index === 3) return `${value}%` // Client Satisfaction
+    if (index === 3) return `${value}%`
     return `${value}+`
   }
 
