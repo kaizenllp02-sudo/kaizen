@@ -12,6 +12,7 @@ import CsbHaircare from './pages/CsbHaircare';
 import CsbHealthcare from './pages/CsbHealthcare';
 import CaseStudies from './pages/CaseStudies';
 import FAQ from './pages/FAQ';
+import KamaleshShukla from './pages/KamaleshShukla';
 
 const GA_MEASUREMENT_ID = 'G-F72YZ1B2D1';
 
@@ -40,6 +41,7 @@ export default function App() {
           <Route path="/case-study/haircare" element={<CsbHaircare />} />
           <Route path="/case-study/healthcare" element={<CsbHealthcare />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/kamalesh-shukla" element={<KamaleshShukla />} />
         </Routes>
       </Router>
     </>
