@@ -1,32 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactGA from 'react-ga4';
+import { env } from '../../lib/env';
 import '../../styles/faq.css';
 
-const faqs = [
-    {
-        question: "What services does Kaizen offer?",
-        answer:
-            "Kaizen offers both digital and traditional marketing services including brand activations, sampling campaigns, event management, and digital marketing strategies tailored for your business."
-    },
-    {
-        question: "How do I get in touch with Kaizen?",
-        answer:
-            "You can fill out the contact form in the Contact Us section or reach us directly at contact@kaizenmarketing.com."
-    },
-    {
-        question: "Does Kaizen handle small business marketing?",
-        answer:
-            "Absolutely! We work with businesses of all sizes and provide scalable strategies suited to your goals and budget."
-    },
-    {
-        question: "Can you help with event promotions?",
-        answer:
-            "Yes! Event promotions and sponsorship activations are one of our specialties. We’ve worked with major brands and venues."
-    }
-];
+const FAQS_API_URL = `${env.GOOGLE_SCRIPT_URL}?type=get-faqs`;
 
 export default function FAQsection() {
+    const [faqs, setFaqs] = useState([]);
     const [activeIndex, setActiveIndex] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        fetch(FAQS_API_URL)
+            .then(res => res.json())
+            .then(data => {
+                setFaqs(Array.isArray(data) ? data : []);
+                setLoading(false);
+            })
+            .catch(err => {
+                setError('Failed to load FAQs.');
+                setLoading(false);
+            });
+    }, []);
 
     const toggleFAQ = (index) => {
         setActiveIndex(prev => (prev === index ? null : index));
@@ -36,6 +32,8 @@ export default function FAQsection() {
         <section className="faq-section">
             <div className="faq-container">
                 <h2 className="faq-title">Frequently Asked Questions</h2>
+                {loading && <div className="faq-loading">Loading FAQs...</div>}
+                {error && <div className="faq-error">{error}</div>}
                 <div className="faq-list">
                     {faqs.map((item, index) => (
                         <div

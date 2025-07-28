@@ -21,6 +21,10 @@ function doGet(e) {
     const formData = e.parameter;
     const sheet = SpreadsheetApp.openById(SHEET_ID);
 
+    if (formData && formData.type === 'get-faqs') {
+      return getFAQs(sheet);
+    }
+
     if (formData.type === 'newsletter') {
       handleNewsletterSubscription(sheet, formData);
     } else if (formData.type === 'deck-request') {
@@ -395,4 +399,25 @@ function sendNewsletterWelcomeEmail(email) {
     subject: subject,
     htmlBody: htmlBody
   });
+}
+
+function getFAQs(sheet) {
+  const faqSheet = sheet.getSheetByName('FAQ');
+  if (!faqSheet) {
+    return ContentService
+      .createTextOutput(JSON.stringify([]))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  const data = faqSheet.getDataRange().getValues();
+  const headers = data.shift();
+  const faqs = data.map(row => {
+    let obj = {};
+    headers.forEach((header, i) => {
+      obj[header.toLowerCase()] = row[i];
+    });
+    return obj;
+  });
+  return ContentService
+    .createTextOutput(JSON.stringify(faqs))
+    .setMimeType(ContentService.MimeType.JSON);
 }
