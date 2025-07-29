@@ -27,9 +27,23 @@ export default function FooterMenu() {
             return;
         }
 
+        // AbstractAPI email validation
         try {
-            const GOOGLE_SCRIPT_URL = env.GOOGLE_SCRIPT_URL;
+            const ABSTRACT_API_KEY = env.ABSTRACT_API_KEY;
+            if (!ABSTRACT_API_KEY) {
+                throw new Error('AbstractAPI key not configured');
+            }
+            const email = newsletterData.email;
+            const validateUrl = `https://emailvalidation.abstractapi.com/v1/?api_key=${ABSTRACT_API_KEY}&email=${encodeURIComponent(email)}`;
+            const res = await fetch(validateUrl);
+            const data = await res.json();
+            if (data.deliverability !== 'DELIVERABLE') {
+                setNewsletterMessage('Please enter a valid, deliverable email address.');
+                setTimeout(() => setNewsletterMessage(null), 5000);
+                return;
+            }
 
+            const GOOGLE_SCRIPT_URL = env.GOOGLE_SCRIPT_URL;
             if (!GOOGLE_SCRIPT_URL) {
                 throw new Error('Google Apps Script URL not configured');
             }
@@ -46,15 +60,10 @@ export default function FooterMenu() {
 
             setNewsletterMessage('Successfully subscribed to newsletter!');
             setNewsletterData({ email: '' });
-
-            // Clear success message after 5 seconds
             setTimeout(() => setNewsletterMessage(null), 5000);
-
         } catch (error) {
             console.error('Error submitting newsletter:', error);
             setNewsletterMessage('Failed to subscribe. Please try again.');
-
-            // Clear error message after 5 seconds
             setTimeout(() => setNewsletterMessage(null), 5000);
         }
     };

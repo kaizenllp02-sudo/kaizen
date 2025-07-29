@@ -16,7 +16,20 @@ export default function IntegratedMarketing() {
             setDeckMessage('Please enter your email address.');
             return;
         }
+        // AbstractAPI email validation
         try {
+            const ABSTRACT_API_KEY = env.ABSTRACT_API_KEY;
+            if (!ABSTRACT_API_KEY) {
+                setDeckMessage('Email verification service not configured.');
+                return;
+            }
+            const absRes = await fetch(`https://emailvalidation.abstractapi.com/v1/?api_key=${ABSTRACT_API_KEY}&email=${encodeURIComponent(deckEmail)}`);
+            const absData = await absRes.json();
+            if (!absData.is_valid_format?.value || absData.deliverability !== 'DELIVERABLE') {
+                setDeckMessage('Email address could not be verified. Please use a valid email.');
+                return;
+            }
+
             const GOOGLE_SCRIPT_URL = env.GOOGLE_SCRIPT_URL;
             if (!GOOGLE_SCRIPT_URL) {
                 throw new Error('Google Apps Script URL not configured');

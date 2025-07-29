@@ -59,6 +59,21 @@ const CaseStudy = () => {
         }
         setSubmitting(true);
         try {
+            // AbstractAPI email verification
+            const ABSTRACT_API_KEY = env.ABSTRACT_API_KEY;
+            if (!ABSTRACT_API_KEY) {
+                setError('Email verification service not configured.');
+                setSubmitting(false);
+                return;
+            }
+            const absRes = await fetch(`https://emailvalidation.abstractapi.com/v1/?api_key=${ABSTRACT_API_KEY}&email=${encodeURIComponent(trimmedEmail)}`);
+            const absData = await absRes.json();
+            if (!absData.is_valid_format?.value || absData.deliverability !== 'DELIVERABLE') {
+                setError('Email address could not be verified. Please use a valid email.');
+                setSubmitting(false);
+                return;
+            }
+
             const GOOGLE_SCRIPT_URL = env.GOOGLE_SCRIPT_URL;
             if (!GOOGLE_SCRIPT_URL) throw new Error('Google Apps Script URL not configured');
             const params = new URLSearchParams();

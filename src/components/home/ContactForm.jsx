@@ -66,7 +66,20 @@ export default function ContactForm() {
   const handleContactSubmit = async (e) => {
     e.preventDefault();
 
+    // AbstractAPI email validation
     try {
+      const ABSTRACT_API_KEY = env.ABSTRACT_API_KEY;
+      if (!ABSTRACT_API_KEY) {
+        setContactMessage('Email verification service not configured.');
+        return;
+      }
+      const absRes = await fetch(`https://emailvalidation.abstractapi.com/v1/?api_key=${ABSTRACT_API_KEY}&email=${encodeURIComponent(contactFormData.email)}`);
+      const absData = await absRes.json();
+      if (!absData.is_valid_format?.value || absData.deliverability !== 'DELIVERABLE') {
+        setContactMessage('Email address could not be verified. Please use a valid email.');
+        return;
+      }
+
       // Google Apps Script Web App URL from environment variable
       const GOOGLE_SCRIPT_URL = env.GOOGLE_SCRIPT_URL;
 
@@ -84,7 +97,7 @@ export default function ContactForm() {
       params.append('timestamp', new Date().toISOString());
 
       // Use fetch with no-cors mode or create a form submission
-      const response = await fetch(`${GOOGLE_SCRIPT_URL}?${params.toString()}`, {
+      await fetch(`${GOOGLE_SCRIPT_URL}?${params.toString()}`, {
         method: 'GET',
         mode: 'no-cors'
       });

@@ -4,10 +4,12 @@
  * Validates that all required environment variables are present
  * Call this function early in your app initialization
  */
+
 export function validateEnvironmentVariables() {
   const requiredVars = [
     'VITE_SANITY_PROJECT_ID',
-    'VITE_GOOGLE_SCRIPT_URL'
+    'VITE_GOOGLE_SCRIPT_URL',
+    'VITE_ABSTRACT_API_KEY'
   ];
 
   const missing = requiredVars.filter(varName => !import.meta.env[varName]);
@@ -28,14 +30,17 @@ export const env = {
   // Sanity configuration
   SANITY_PROJECT_ID: import.meta.env.VITE_SANITY_PROJECT_ID,
   SANITY_DATASET: import.meta.env.VITE_SANITY_DATASET || 'production',
-  
+
   // Google Apps Script configuration
   GOOGLE_SCRIPT_URL: import.meta.env.VITE_GOOGLE_SCRIPT_URL,
-  
+
+  // AbstractAPI Email Validation Key
+  ABSTRACT_API_KEY: import.meta.env.VITE_ABSTRACT_API_KEY,
+
   // Development mode
   IS_DEV: import.meta.env.DEV,
   IS_PROD: import.meta.env.PROD,
-  
+
   // Base URL
   BASE_URL: import.meta.env.BASE_URL,
 };
