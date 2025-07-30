@@ -1,3 +1,27 @@
+.kamlesh-connect-link {
+  color: #38bdf8;
+  text-decoration: underline;
+  margin-left: 4px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  transition: color 0.18s;
+}
+.kamlesh-connect-link > span,
+.kamlesh-connect-link > i {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.kamlesh-connect-link > span[role="img"],
+.kamlesh-connect-link > i.fa-brands {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+.kamlesh-connect-link:hover {
+  color: #e53e3e;
+}
 .kamlesh-hero-section {
   display: flex;
   align-items: center;
@@ -61,6 +85,7 @@
   border-radius: 18px;
   box-shadow: none;
   padding: 32px 20px;
+  margin-bottom: 0;
   font-size: 1.08rem;
   color: #e6eaf0;
   line-height: 1.7;
@@ -168,4 +193,69 @@
   .kamlesh-about-section h2 {
     font-size: 1.1rem;
   }
+}
+
+.kamlesh-achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 36px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.kamlesh-achievements-list li {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.kamlesh-achievement-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kamlesh-achievement-icon {
+  font-size: 1.35rem;
+  min-width: 1.35rem;
+  flex-shrink: 0;
+}
+
+.kamlesh-achievement-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+.kamlesh-achievement-desc {
+  display: block;
+  color: #d1d5db;
+  font-size: 1rem;
+  margin-left: 2.2rem;
+  margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+  .kamlesh-achievement-desc {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Company links list */
+.kamlesh-connect-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.08rem;
+}
+.kamlesh-connect-list li {
+  color: #f3f4f6;
+  line-height: 1.7;
+}
+.kamlesh-connect-list a {
+  text-decoration: none;
+  margin-left: 4px;
 }
