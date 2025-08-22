@@ -24,12 +24,38 @@
 
 .kaizen-logo {
     flex: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
 }
 
 .kaizen-logo-img {
     height: 40px;
     width: auto;
     object-fit: contain;
+}
+
+.kaizen-logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.kaizen-brand-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.kaizen-brand-tagline {
+    font-size: 12px;
+    font-weight: 500;
+    color: #cccccc;
+    margin: 0;
+    white-space: nowrap;
 }
 
 .kaizen-menu {
@@ -136,8 +162,17 @@
     }
 
     .kaizen-logo-img {
-        height: 40px;
+        height: 35px;
         padding: 6px 0;
+    }
+
+
+    .kaizen-brand-name {
+        font-size: 16px;
+    }
+
+    .kaizen-brand-tagline {
+        font-size: 10px;
     }
 
     .kaizen-menu {
@@ -186,5 +221,20 @@
         font-size: 22px;
         padding: 12px 0;
         display: inline-block;
+    }
+}
+
+/* Medium screens and tablets - show logo text */
+@media (min-width: 480px) {
+    .kaizen-logo-text {
+        display: flex !important;
+    }
+    
+    .kaizen-brand-name {
+        font-size: 16px;
+    }
+    
+    .kaizen-brand-tagline {
+        font-size: 11px;
     }
 }

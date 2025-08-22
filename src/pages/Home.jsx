@@ -37,7 +37,7 @@ export default function Home() {
       <Helmet>
         <title>Kaizen</title>
         <meta name="description" content="Kaizen is a research-driven marketing agency blending strategy, creativity, and flawless execution. Discover integrated marketing solutions that move people—and numbers." />
-        <meta property="og:title" content="Kaizen – Research-Driven Marketing Agency" />
+        <meta property="og:title" content="Kaizen events & promotion" />
         <meta property="og:description" content="Kaizen blends strategy, creativity, and flawless execution. Discover integrated marketing solutions that move people—and numbers." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://kaizzzen.vercel.app/" />

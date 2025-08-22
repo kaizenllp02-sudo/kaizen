@@ -77,8 +77,8 @@ export default function FooterMenu() {
                             <img src="/kaizen.png" alt="Kaizen Logo" className="footer-logo-img" />
                         </div>
                         <div className="footer-menu-logo-text">
-                            <h2>Kaizen</h2>
-                            <span>Promotions</span>
+                            <h2>KAIZEN</h2>
+                            <span>Events & Promotions</span>
                         </div>
                     </div>
                     <p className="footer-menu-tagline">

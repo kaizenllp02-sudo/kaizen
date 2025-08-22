@@ -58,6 +58,10 @@ export default function Navbar() {
         <section className="kaizen-container">
           <a href="/" className="kaizen-logo" aria-label="Kaizen Home">
             <img src="/kaizen.png" alt="Kaizen Logo" className="kaizen-logo-img" />
+            <div className="kaizen-logo-text">
+              <div className="kaizen-brand-name">KAIZEN</div>
+              <div className="kaizen-brand-tagline">Events & Promotion</div>
+            </div>
           </a>
 
           {/* Hamburger Icon */}
