@@ -66,10 +66,11 @@
     box-shadow: 0 12px 35px rgba(229, 62, 62, 0.3);
 }
 
-.footer-menu-logo-icon i {
-    font-size: 28px;
-    color: #0a0e1a;
-    font-weight: 900;
+.footer-logo-img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .footer-menu-logo-text h2 {
@@ -565,8 +566,9 @@
         height: 50px;
     }
 
-    .footer-menu-logo-icon i {
-        font-size: 24px;
+    .footer-logo-img {
+        width: 30px;
+        height: 30px;
     }
 
     .footer-menu-logo-text h2 {

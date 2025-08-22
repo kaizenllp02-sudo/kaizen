@@ -74,7 +74,7 @@ export default function FooterMenu() {
                 <div className="footer-menu-brand">
                     <div className="footer-menu-logo">
                         <div className="footer-menu-logo-icon">
-                            <i className="fa-solid fa-shop"></i>
+                            <img src="/kaizen.png" alt="Kaizen Logo" className="footer-logo-img" />
                         </div>
                         <div className="footer-menu-logo-text">
                             <h2>Kaizen</h2>

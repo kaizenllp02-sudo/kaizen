@@ -26,9 +26,10 @@
     flex: 0;
 }
 
-.kaizen-logo i {
-    font-size: 30px;
-    color: #f2f2f2;
+.kaizen-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .kaizen-menu {
@@ -134,8 +135,8 @@
         padding: 0 10px;
     }
 
-    .kaizen-logo i {
-        font-size: 28px;
+    .kaizen-logo-img {
+        height: 40px;
         padding: 6px 0;
     }
 

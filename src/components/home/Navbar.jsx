@@ -57,7 +57,7 @@ export default function Navbar() {
       <nav className={`kaizen-navbar ${isMenuOpen ? 'mobile-expanded' : ''}`}>
         <section className="kaizen-container">
           <a href="/" className="kaizen-logo" aria-label="Kaizen Home">
-            <i className="fa-solid fa-shop" aria-hidden="true"></i>
+            <img src="/kaizen.png" alt="Kaizen Logo" className="kaizen-logo-img" />
           </a>
 
           {/* Hamburger Icon */}
