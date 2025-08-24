@@ -78,9 +78,9 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <ul className="kaizen-menu">
-            <li className="kaizen-menu-list">
+            {/* <li className="kaizen-menu-list">
               <a href="/" className="kaizen-menu-link">Home</a>
-            </li>
+            </li> */}
             <li className="kaizen-menu-list">
               <a href="#services" className="kaizen-menu-link" onClick={e => {
                 ReactGA.event({
@@ -128,9 +128,9 @@ export default function Navbar() {
             <i className="fa-solid fa-xmark" aria-hidden="true"></i>
           </button>
           <ul className="kaizen-fullscreen-list">
-            <li className="kaizen-menu-list">
+            {/* <li className="kaizen-menu-list">
               <a href="/" className="kaizen-menu-link" onClick={toggleMenu}>Home</a>
-            </li>
+            </li> */}
             <li className="kaizen-menu-list">
               <a href="#services" className="kaizen-menu-link" onClick={e => {
                 ReactGA.event({

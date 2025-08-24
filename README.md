@@ -2,7 +2,7 @@
 	<img src="public/kaizen.png" alt="Kaizen Marketing Agency Logo" width="120" />
 </p>
 
-<h1 align="center">Kaizen Marketing Agency Website</h1>
+<h1 align="center">Kaizen Events & Promotions</h1>
 
 Kaizen is a research-driven marketing agency specializing in transforming customer insights into impactful campaigns that drive awareness, trial, and loyalty across both traditional and digital channels.
 
